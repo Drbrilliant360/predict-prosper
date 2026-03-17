@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import PunditSidebar from "./PunditSidebar";
+import ThemeToggle from "./ThemeToggle";
 import { Bell } from "lucide-react";
 
 const PunditLayout = ({ children }: { children: ReactNode }) => {
