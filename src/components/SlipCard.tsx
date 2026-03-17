@@ -83,7 +83,7 @@ const SlipCard = ({ slip, index = 0 }: { slip: Slip; index?: number }) => {
             size="sm"
             className="h-8 bg-cta text-accent-foreground hover:bg-cta-hover font-semibold text-xs tap-scale"
           >
-            Unlock €{slip.price}
+            Unlock TSh {slip.price.toLocaleString()}
           </Button>
         ) : (
           <Button

@@ -43,7 +43,7 @@ const Index = () => {
                     <div className="space-y-1 text-sm text-muted-foreground mb-3">
                       <p>Pundit: <span className="text-foreground">@{slip.punditName.replace(/\s/g, '')}</span></p>
                       <p>Odds: <span className="font-mono text-foreground">{slip.odds}</span></p>
-                      <p>Stake: <span className="font-mono text-foreground">€{slip.price}</span></p>
+                      <p>Stake: <span className="font-mono text-foreground">TSh {slip.price.toLocaleString()}</span></p>
                     </div>
 
                     <div className="flex items-center justify-between">

@@ -15,22 +15,22 @@ const stats = [
   { label: "Total Users", value: "12,482", icon: Users, change: "+124 this week", changeColor: "text-primary" },
   { label: "Active Pundits", value: "348", icon: UserCheck, change: "+12 pending", changeColor: "text-pending" },
   { label: "Total Slips", value: "8,921", icon: FileText, change: "342 today", changeColor: "text-primary" },
-  { label: "Revenue (MTD)", value: "€48,230", icon: DollarSign, change: "+18.4%", changeColor: "text-primary" },
+  { label: "Revenue (MTD)", value: "TSh 110M", icon: DollarSign, change: "+18.4%", changeColor: "text-primary" },
   { label: "Open Disputes", value: "23", icon: AlertTriangle, change: "5 urgent", changeColor: "text-pending" },
-  { label: "Pending Payouts", value: "€12,450", icon: CreditCard, change: "18 requests", changeColor: "text-muted-foreground" },
+  { label: "Pending Payouts", value: "TSh 28.6M", icon: CreditCard, change: "18 requests", changeColor: "text-muted-foreground" },
   { label: "Avg Win Rate", value: "64.2%", icon: TrendingUp, change: "+1.2% vs last month", changeColor: "text-primary" },
   { label: "DAU", value: "3,842", icon: Activity, change: "+8.3%", changeColor: "text-primary" },
 ];
 
 const recentActivity = [
-  { time: "2 min ago", action: "New pundit registration", detail: "SharpEdge99 submitted KYC", type: "info" },
-  { time: "5 min ago", action: "Dispute opened", detail: "User #4821 disputed slip #s892", type: "warning" },
-  { time: "12 min ago", action: "Payout processed", detail: "€2,340 to Alpha Picks", type: "success" },
-  { time: "18 min ago", action: "Slip flagged", detail: "Automated fraud check on slip #s901", type: "warning" },
-  { time: "25 min ago", action: "New user signup", detail: "john.d@email.com via referral", type: "info" },
-  { time: "31 min ago", action: "Commission collected", detail: "€45.00 from 3 slip purchases", type: "success" },
-  { time: "45 min ago", action: "Pundit verified", detail: "Court Vision passed KYC review", type: "success" },
-  { time: "1 hr ago", action: "Bulk result update", detail: "42 slips settled (Premier League)", type: "info" },
+  { time: "2 min ago", action: "New pundit registration", detail: "Juma Predictions submitted KYC", type: "info" },
+  { time: "5 min ago", action: "Dispute opened", detail: "User Baraka disputed slip #S006", type: "warning" },
+  { time: "12 min ago", action: "Payout processed", detail: "TSh 4,574,700 to Bongo Tips via M-Pesa", type: "success" },
+  { time: "18 min ago", action: "Slip flagged", detail: "Automated fraud check on slip #S006", type: "warning" },
+  { time: "25 min ago", action: "New user signup", detail: "neema@email.co.tz via referral", type: "info" },
+  { time: "31 min ago", action: "Commission collected", detail: "TSh 103,500 from 3 slip purchases", type: "success" },
+  { time: "45 min ago", action: "Pundit verified", detail: "Kimaro Bets passed KYC review", type: "success" },
+  { time: "1 hr ago", action: "Bulk result update", detail: "42 slips settled (NBC Premier League)", type: "info" },
 ];
 
 const typeStyles = {
@@ -109,10 +109,10 @@ const AdminDashboard = () => {
           </div>
           <div className="p-4 space-y-4">
             {[
-              { label: "Slip Purchases", amount: "€32,100", pct: 66.5 },
-              { label: "Subscriptions", amount: "€9,820", pct: 20.4 },
-              { label: "Daily Passes", amount: "€4,110", pct: 8.5 },
-              { label: "Bundles", amount: "€2,200", pct: 4.6 },
+              { label: "Slip Purchases", amount: "TSh 73.8M", pct: 66.5 },
+              { label: "Subscriptions", amount: "TSh 22.6M", pct: 20.4 },
+              { label: "Daily Passes", amount: "TSh 9.5M", pct: 8.5 },
+              { label: "Bundles", amount: "TSh 5.1M", pct: 4.6 },
             ].map((item, i) => (
               <div key={i}>
                 <div className="flex items-center justify-between mb-1">

@@ -5,14 +5,14 @@ import { Button } from "@/components/ui/button";
 import { MoreHorizontal, Search } from "lucide-react";
 
 const users = [
-  { id: "U001", name: "John Doe", email: "john@email.com", role: "customer", status: "active", joined: "2026-01-15", spent: "€340" },
-  { id: "U002", name: "Sarah Jones", email: "sarah@email.com", role: "customer", status: "active", joined: "2026-02-08", spent: "€1,220" },
-  { id: "U003", name: "Mike Chen", email: "mike@email.com", role: "customer", status: "suspended", joined: "2025-11-20", spent: "€85" },
-  { id: "U004", name: "Alpha Picks", email: "alpha@email.com", role: "pundit", status: "active", joined: "2025-09-01", spent: "—" },
-  { id: "U005", name: "Emma Wilson", email: "emma@email.com", role: "customer", status: "active", joined: "2026-03-01", spent: "€560" },
-  { id: "U006", name: "Court Vision", email: "court@email.com", role: "pundit", status: "pending", joined: "2026-03-10", spent: "—" },
-  { id: "U007", name: "Tom Baker", email: "tom@email.com", role: "customer", status: "banned", joined: "2025-07-12", spent: "€0" },
-  { id: "U008", name: "Lisa Park", email: "lisa@email.com", role: "customer", status: "active", joined: "2026-02-28", spent: "€190" },
+  { id: "U001", name: "Juma Mwalimu", email: "juma@email.co.tz", role: "customer", status: "active", joined: "2026-01-15", spent: "TSh 780,000" },
+  { id: "U002", name: "Amina Hassan", email: "amina@email.co.tz", role: "customer", status: "active", joined: "2026-02-08", spent: "TSh 2,800,000" },
+  { id: "U003", name: "Baraka Shao", email: "baraka@email.co.tz", role: "customer", status: "suspended", joined: "2025-11-20", spent: "TSh 195,000" },
+  { id: "U004", name: "Bongo Tips", email: "bongo@email.co.tz", role: "pundit", status: "active", joined: "2025-09-01", spent: "—" },
+  { id: "U005", name: "Neema Kimaro", email: "neema@email.co.tz", role: "customer", status: "active", joined: "2026-03-01", spent: "TSh 1,290,000" },
+  { id: "U006", name: "Kimaro Bets", email: "kimaro@email.co.tz", role: "pundit", status: "pending", joined: "2026-03-10", spent: "—" },
+  { id: "U007", name: "Rashid Mfaume", email: "rashid@email.co.tz", role: "customer", status: "banned", joined: "2025-07-12", spent: "TSh 0" },
+  { id: "U008", name: "Lilian Moshi", email: "lilian@email.co.tz", role: "customer", status: "active", joined: "2026-02-28", spent: "TSh 437,000" },
 ];
 
 const statusStyles: Record<string, string> = {
