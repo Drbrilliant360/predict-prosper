@@ -19,6 +19,16 @@ import AdminReports from "./pages/admin/AdminReports";
 import AdminSettings from "./pages/admin/AdminSettings";
 import AdminAds from "./pages/admin/AdminAds";
 import AdminAuditLogs from "./pages/admin/AdminAuditLogs";
+import PunditDashboard from "./pages/pundit/PunditDashboard";
+import PunditProfile from "./pages/pundit/PunditProfile";
+import CreateSlip from "./pages/pundit/CreateSlip";
+import ManageSlips from "./pages/pundit/ManageSlips";
+import PunditAnalytics from "./pages/pundit/PunditAnalytics";
+import PunditSales from "./pages/pundit/PunditSales";
+import PunditWithdrawals from "./pages/pundit/PunditWithdrawals";
+import PunditReviews from "./pages/pundit/PunditReviews";
+import PunditFollowers from "./pages/pundit/PunditFollowers";
+import PunditPromotions from "./pages/pundit/PunditPromotions";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,11 +40,14 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          {/* Customer routes */}
           <Route path="/" element={<Index />} />
           <Route path="/slips" element={<MySlips />} />
           <Route path="/pundits" element={<Pundits />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/wallet" element={<WalletPage />} />
+
+          {/* Admin routes */}
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/users" element={<AdminUsers />} />
           <Route path="/admin/pundits" element={<AdminPundits />} />
@@ -46,6 +59,19 @@ const App = () => (
           <Route path="/admin/settings" element={<AdminSettings />} />
           <Route path="/admin/ads" element={<AdminAds />} />
           <Route path="/admin/audit-logs" element={<AdminAuditLogs />} />
+
+          {/* Pundit routes */}
+          <Route path="/pundit" element={<PunditDashboard />} />
+          <Route path="/pundit/profile" element={<PunditProfile />} />
+          <Route path="/pundit/create-slip" element={<CreateSlip />} />
+          <Route path="/pundit/slips" element={<ManageSlips />} />
+          <Route path="/pundit/analytics" element={<PunditAnalytics />} />
+          <Route path="/pundit/sales" element={<PunditSales />} />
+          <Route path="/pundit/withdrawals" element={<PunditWithdrawals />} />
+          <Route path="/pundit/reviews" element={<PunditReviews />} />
+          <Route path="/pundit/followers" element={<PunditFollowers />} />
+          <Route path="/pundit/promotions" element={<PunditPromotions />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
