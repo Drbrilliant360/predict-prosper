@@ -1,4 +1,7 @@
 project_id = "mstxshtfpnvrgcybidqx"
 
+[functions.sonic-pesa-deposit]
+verify_jwt = false
+
 [functions.sonic-pesa-webhook]
 verify_jwt = false
