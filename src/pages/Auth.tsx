@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable/index";
@@ -9,6 +9,17 @@ import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/contexts/AuthContext";
 import kanjiLogo from "@/assets/kanji-logo.png";
+
+const getRedirectPath = async (userId: string): Promise<string> => {
+  const { data } = await supabase
+    .from("user_roles")
+    .select("role")
+    .eq("user_id", userId);
+  const roles = data?.map((r) => r.role) ?? [];
+  if (roles.includes("admin")) return "/admin";
+  if (roles.includes("pundit")) return "/pundit";
+  return "/";
+};
 
 const Auth = () => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -22,7 +33,7 @@ const Auth = () => {
 
   useEffect(() => {
     if (!authLoading && user) {
-      navigate("/", { replace: true });
+      getRedirectPath(user.id).then((path) => navigate(path, { replace: true }));
     }
   }, [user, authLoading, navigate]);
 
