@@ -4,12 +4,12 @@ import { Button } from "@/components/ui/button";
 import { MoreHorizontal, Search, Clock, Check, X, AlertCircle } from "lucide-react";
 
 const slips = [
-  { id: "S001", match: "Arsenal vs Chelsea", pundit: "Alpha Picks", sport: "Football", odds: 2.5, price: "€15", status: "pending", buyers: 42, posted: "2h ago" },
-  { id: "S002", match: "Man City vs Liverpool", pundit: "Alpha Picks", sport: "Football", odds: 1.85, price: "€12", status: "won", buyers: 89, posted: "1d ago" },
-  { id: "S003", match: "Lakers vs Celtics", pundit: "Court Vision", sport: "Basketball", odds: 1.95, price: "€10", status: "pending", buyers: 31, posted: "4h ago" },
-  { id: "S004", match: "Real Madrid vs Barcelona", pundit: "Goal Machine", sport: "Football", odds: 1.72, price: "€20", status: "pending", buyers: 67, posted: "3h ago" },
-  { id: "S005", match: "Djokovic vs Alcaraz", pundit: "Ace Serve", sport: "Tennis", odds: 2.3, price: "€14", status: "lost", buyers: 24, posted: "2d ago" },
-  { id: "S006", match: "Dortmund vs Bayern", pundit: "Sharp Edge", sport: "Football", odds: 2.15, price: "€18", status: "flagged", buyers: 15, posted: "5h ago" },
+  { id: "S001", match: "Simba SC vs Young Africans", pundit: "Bongo Tips", sport: "Football", odds: 2.5, price: "TSh 5,000", status: "pending", buyers: 42, posted: "2h ago" },
+  { id: "S002", match: "Azam FC vs Namungo FC", pundit: "Bongo Tips", sport: "Football", odds: 1.85, price: "TSh 3,000", status: "won", buyers: 89, posted: "1d ago" },
+  { id: "S003", match: "Lakers vs Celtics", pundit: "Kimaro Bets", sport: "Basketball", odds: 1.95, price: "TSh 3,500", status: "pending", buyers: 31, posted: "4h ago" },
+  { id: "S004", match: "Arsenal vs Chelsea", pundit: "Daktari wa Odds", sport: "Football", odds: 1.72, price: "TSh 5,000", status: "pending", buyers: 67, posted: "3h ago" },
+  { id: "S005", match: "Djokovic vs Alcaraz", pundit: "Msimbazi Edge", sport: "Tennis", odds: 2.3, price: "TSh 3,500", status: "lost", buyers: 24, posted: "2d ago" },
+  { id: "S006", match: "Coastal Union vs KMC FC", pundit: "Juma Predictions", sport: "Football", odds: 2.15, price: "TSh 4,000", status: "flagged", buyers: 15, posted: "5h ago" },
 ];
 
 const statusConfig: Record<string, { icon: any; className: string }> = {

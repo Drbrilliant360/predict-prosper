@@ -7,15 +7,15 @@ const sections = [
     title: "Platform Fees",
     items: [
       { label: "Commission Rate", value: "15%", desc: "Applied to all pundit earnings" },
-      { label: "Payment Processing Fee", value: "2.9% + €0.30", desc: "Per transaction" },
-      { label: "Withdrawal Fee", value: "€1.50", desc: "Per payout request" },
+      { label: "Payment Processing Fee", value: "2.9% + TSh 700", desc: "Per transaction" },
+      { label: "Withdrawal Fee", value: "TSh 3,500", desc: "Per payout request" },
     ],
   },
   {
     title: "Slip Configuration",
     items: [
-      { label: "Min Slip Price", value: "€5.00", desc: "Minimum price pundits can set" },
-      { label: "Max Slip Price", value: "€100.00", desc: "Maximum price per slip" },
+      { label: "Min Slip Price", value: "TSh 1,000", desc: "Minimum price pundits can set" },
+      { label: "Max Slip Price", value: "TSh 50,000", desc: "Maximum price per slip" },
       { label: "Default Expiry", value: "24 hours", desc: "Auto-expire after posting" },
     ],
   },

@@ -4,12 +4,12 @@ import { Button } from "@/components/ui/button";
 import { MoreHorizontal, Search } from "lucide-react";
 
 const payments = [
-  { id: "TX001", user: "John Doe", type: "Slip Purchase", amount: "€15.00", fee: "€2.25", net: "€12.75", method: "Card", status: "completed", date: "2026-03-17 14:22" },
-  { id: "TX002", user: "Sarah Jones", type: "Subscription", amount: "€49.99", fee: "€7.50", net: "€42.49", method: "PayPal", status: "completed", date: "2026-03-17 13:10" },
-  { id: "TX003", user: "Emma Wilson", type: "Wallet Deposit", amount: "€100.00", fee: "€0.00", net: "€100.00", method: "Card", status: "completed", date: "2026-03-17 12:45" },
-  { id: "TX004", user: "Mike Chen", type: "Slip Purchase", amount: "€20.00", fee: "€3.00", net: "€17.00", method: "Wallet", status: "pending", date: "2026-03-17 11:30" },
-  { id: "TX005", user: "Lisa Park", type: "Bundle (3 Pack)", amount: "€35.00", fee: "€5.25", net: "€29.75", method: "M-Pesa", status: "completed", date: "2026-03-17 10:15" },
-  { id: "TX006", user: "Tom Baker", type: "Refund", amount: "-€15.00", fee: "€0.00", net: "-€15.00", method: "Card", status: "refunded", date: "2026-03-17 09:00" },
+  { id: "TX001", user: "Juma Mwalimu", type: "Slip Purchase", amount: "TSh 5,000", fee: "TSh 750", net: "TSh 4,250", method: "M-Pesa", status: "completed", date: "2026-03-17 14:22" },
+  { id: "TX002", user: "Amina Hassan", type: "Subscription", amount: "TSh 25,000", fee: "TSh 3,750", net: "TSh 21,250", method: "Tigo Pesa", status: "completed", date: "2026-03-17 13:10" },
+  { id: "TX003", user: "Neema Kimaro", type: "Wallet Deposit", amount: "TSh 50,000", fee: "TSh 0", net: "TSh 50,000", method: "M-Pesa", status: "completed", date: "2026-03-17 12:45" },
+  { id: "TX004", user: "Baraka Shao", type: "Slip Purchase", amount: "TSh 3,500", fee: "TSh 525", net: "TSh 2,975", method: "Wallet", status: "pending", date: "2026-03-17 11:30" },
+  { id: "TX005", user: "Lilian Moshi", type: "Bundle (3 Pack)", amount: "TSh 12,000", fee: "TSh 1,800", net: "TSh 10,200", method: "Airtel Money", status: "completed", date: "2026-03-17 10:15" },
+  { id: "TX006", user: "Rashid Mfaume", type: "Refund", amount: "-TSh 5,000", fee: "TSh 0", net: "-TSh 5,000", method: "M-Pesa", status: "refunded", date: "2026-03-17 09:00" },
 ];
 
 const statusStyles: Record<string, string> = {

@@ -4,12 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Shield, MoreHorizontal, Search } from "lucide-react";
 
 const pundits = [
-  { id: "P001", name: "Alpha Picks", sport: "Football", winRate: 72, roi: 14.2, slips: 482, status: "verified", earnings: "€18,420", kyc: "approved" },
-  { id: "P002", name: "Court Vision", sport: "Basketball", winRate: 68, roi: 11.8, slips: 310, status: "verified", earnings: "€9,850", kyc: "approved" },
-  { id: "P003", name: "Ace Serve", sport: "Tennis", winRate: 65, roi: 9.4, slips: 198, status: "verified", earnings: "€5,320", kyc: "approved" },
-  { id: "P004", name: "Goal Machine", sport: "Football", winRate: 70, roi: 12.1, slips: 415, status: "verified", earnings: "€14,100", kyc: "approved" },
-  { id: "P005", name: "Sharp Edge", sport: "Football", winRate: 63, roi: 18.7, slips: 256, status: "pending", earnings: "€0", kyc: "pending" },
-  { id: "P006", name: "Ice Analyst", sport: "Ice Hockey", winRate: 61, roi: 8.3, slips: 142, status: "suspended", earnings: "€2,100", kyc: "approved" },
+  { id: "P001", name: "Bongo Tips", sport: "Football", winRate: 72, roi: 14.2, slips: 482, status: "verified", earnings: "TSh 42,400,000", kyc: "approved" },
+  { id: "P002", name: "Kimaro Bets", sport: "Basketball", winRate: 68, roi: 11.8, slips: 310, status: "verified", earnings: "TSh 22,650,000", kyc: "approved" },
+  { id: "P003", name: "Msimbazi Edge", sport: "Tennis", winRate: 65, roi: 9.4, slips: 198, status: "verified", earnings: "TSh 12,240,000", kyc: "approved" },
+  { id: "P004", name: "Daktari wa Odds", sport: "Football", winRate: 70, roi: 12.1, slips: 415, status: "verified", earnings: "TSh 32,430,000", kyc: "approved" },
+  { id: "P005", name: "Juma Predictions", sport: "Football", winRate: 63, roi: 18.7, slips: 256, status: "pending", earnings: "TSh 0", kyc: "pending" },
+  { id: "P006", name: "Baraka Analyst", sport: "Ice Hockey", winRate: 61, roi: 8.3, slips: 142, status: "suspended", earnings: "TSh 4,830,000", kyc: "approved" },
 ];
 
 const statusStyles: Record<string, string> = {

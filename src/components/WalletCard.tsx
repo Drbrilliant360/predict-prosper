@@ -18,7 +18,7 @@ const WalletCard = () => {
           </span>
         </div>
         <p className="font-mono text-3xl font-bold tracking-tight-custom text-primary">
-          €2,540.50
+          TSh 5,840,000
         </p>
       </div>
       <div className="flex gap-3">

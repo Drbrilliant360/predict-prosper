@@ -3,26 +3,26 @@ import { motion } from "framer-motion";
 import { BarChart3, TrendingUp, Users, DollarSign, FileText, Activity } from "lucide-react";
 
 const metrics = [
-  { label: "Total Revenue", value: "€248,920", change: "+18.4% vs last month", icon: DollarSign },
+  { label: "Total Revenue", value: "TSh 572M", change: "+18.4% vs last month", icon: DollarSign },
   { label: "Active Users (30d)", value: "8,421", change: "+12.1% vs last month", icon: Users },
   { label: "Slips Sold (30d)", value: "4,892", change: "+22.3% vs last month", icon: FileText },
-  { label: "Avg Revenue/User", value: "€29.56", change: "+5.8% vs last month", icon: Activity },
+  { label: "Avg Revenue/User", value: "TSh 67,900", change: "+5.8% vs last month", icon: Activity },
 ];
 
 const topPundits = [
-  { name: "Alpha Picks", revenue: "€18,420", slipsSold: 1240, winRate: 72 },
-  { name: "Goal Machine", revenue: "€14,100", slipsSold: 980, winRate: 70 },
-  { name: "Court Vision", revenue: "€9,850", slipsSold: 642, winRate: 68 },
-  { name: "Ace Serve", revenue: "€5,320", slipsSold: 385, winRate: 65 },
+  { name: "Bongo Tips", revenue: "TSh 42.4M", slipsSold: 1240, winRate: 72 },
+  { name: "Daktari wa Odds", revenue: "TSh 32.4M", slipsSold: 980, winRate: 70 },
+  { name: "Kimaro Bets", revenue: "TSh 22.7M", slipsSold: 642, winRate: 68 },
+  { name: "Msimbazi Edge", revenue: "TSh 12.2M", slipsSold: 385, winRate: 65 },
 ];
 
 const monthlyRevenue = [
-  { month: "Oct", value: 32400 },
-  { month: "Nov", value: 38200 },
-  { month: "Dec", value: 41800 },
-  { month: "Jan", value: 35600 },
-  { month: "Feb", value: 44100 },
-  { month: "Mar", value: 48230 },
+  { month: "Oct", value: 74500000 },
+  { month: "Nov", value: 87900000 },
+  { month: "Dec", value: 96100000 },
+  { month: "Jan", value: 81900000 },
+  { month: "Feb", value: 101400000 },
+  { month: "Mar", value: 110900000 },
 ];
 
 const maxRevenue = Math.max(...monthlyRevenue.map((m) => m.value));
@@ -63,7 +63,7 @@ const AdminReports = () => {
             <div className="flex items-end gap-2 h-40">
               {monthlyRevenue.map((m, i) => (
                 <div key={m.month} className="flex-1 flex flex-col items-center gap-1">
-                  <span className="font-mono text-[10px] text-muted-foreground">€{(m.value / 1000).toFixed(1)}k</span>
+                  <span className="font-mono text-[10px] text-muted-foreground">{(m.value / 1000000).toFixed(0)}M</span>
                   <motion.div
                     initial={{ height: 0 }}
                     animate={{ height: `${(m.value / maxRevenue) * 100}%` }}

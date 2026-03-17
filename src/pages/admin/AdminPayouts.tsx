@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Banknote } from "lucide-react";
 
 const payouts = [
-  { id: "PO001", pundit: "Alpha Picks", amount: "€2,340.00", commission: "€351.00", net: "€1,989.00", method: "Bank Transfer", status: "completed", date: "2026-03-16" },
-  { id: "PO002", pundit: "Goal Machine", amount: "€1,820.00", commission: "€273.00", net: "€1,547.00", method: "PayPal", status: "processing", date: "2026-03-17" },
-  { id: "PO003", pundit: "Court Vision", amount: "€950.00", commission: "€142.50", net: "€807.50", method: "Bank Transfer", status: "pending", date: "2026-03-17" },
-  { id: "PO004", pundit: "Ace Serve", amount: "€620.00", commission: "€93.00", net: "€527.00", method: "M-Pesa", status: "pending", date: "2026-03-17" },
-  { id: "PO005", pundit: "Sharp Edge", amount: "€0.00", commission: "€0.00", net: "€0.00", method: "—", status: "held", date: "—" },
+  { id: "PO001", pundit: "Bongo Tips", amount: "TSh 5,382,000", commission: "TSh 807,300", net: "TSh 4,574,700", method: "M-Pesa", status: "completed", date: "2026-03-16" },
+  { id: "PO002", pundit: "Daktari wa Odds", amount: "TSh 4,186,000", commission: "TSh 627,900", net: "TSh 3,558,100", method: "Tigo Pesa", status: "processing", date: "2026-03-17" },
+  { id: "PO003", pundit: "Kimaro Bets", amount: "TSh 2,185,000", commission: "TSh 327,750", net: "TSh 1,857,250", method: "Bank Transfer", status: "pending", date: "2026-03-17" },
+  { id: "PO004", pundit: "Msimbazi Edge", amount: "TSh 1,426,000", commission: "TSh 213,900", net: "TSh 1,212,100", method: "M-Pesa", status: "pending", date: "2026-03-17" },
+  { id: "PO005", pundit: "Juma Predictions", amount: "TSh 0", commission: "TSh 0", net: "TSh 0", method: "—", status: "held", date: "—" },
 ];
 
 const statusStyles: Record<string, string> = {
