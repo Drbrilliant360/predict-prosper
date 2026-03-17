@@ -32,6 +32,7 @@ import PunditPromotions from "./pages/pundit/PunditPromotions";
 import PunditSettings from "./pages/pundit/PunditSettings";
 import Settings from "./pages/Settings";
 import Support from "./pages/Support";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -51,6 +52,7 @@ const App = () => (
           <Route path="/wallet" element={<WalletPage />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/profile" element={<Profile />} />
 
           {/* Admin routes */}
           <Route path="/admin" element={<AdminDashboard />} />
