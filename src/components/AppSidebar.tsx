@@ -7,8 +7,8 @@ import {
   Wallet,
   Settings,
   HelpCircle,
-  TrendingUp,
 } from "lucide-react";
+import kanjiLogo from "@/assets/kanji-logo.png";
 
 const navItems = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/" },
