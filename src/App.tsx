@@ -29,6 +29,9 @@ import PunditWithdrawals from "./pages/pundit/PunditWithdrawals";
 import PunditReviews from "./pages/pundit/PunditReviews";
 import PunditFollowers from "./pages/pundit/PunditFollowers";
 import PunditPromotions from "./pages/pundit/PunditPromotions";
+import PunditSettings from "./pages/pundit/PunditSettings";
+import Settings from "./pages/Settings";
+import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -46,6 +49,8 @@ const App = () => (
           <Route path="/pundits" element={<Pundits />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/wallet" element={<WalletPage />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/support" element={<Support />} />
 
           {/* Admin routes */}
           <Route path="/admin" element={<AdminDashboard />} />
@@ -71,7 +76,7 @@ const App = () => (
           <Route path="/pundit/reviews" element={<PunditReviews />} />
           <Route path="/pundit/followers" element={<PunditFollowers />} />
           <Route path="/pundit/promotions" element={<PunditPromotions />} />
-
+          <Route path="/pundit/settings" element={<PunditSettings />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
