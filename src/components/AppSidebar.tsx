@@ -26,9 +26,7 @@ const AppSidebarContent = ({ onNavigate }: { onNavigate?: () => void }) => {
   return (
     <>
       <div className="mb-8 flex items-center gap-2.5 px-5">
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-          <TrendingUp className="h-4 w-4 text-primary-foreground" />
-        </div>
+        <img src={kanjiLogo} alt="Kanji" className="h-8 w-8 rounded-lg object-cover" />
         <span className="text-lg font-bold tracking-tight-custom text-foreground">
           KANJI
         </span>
