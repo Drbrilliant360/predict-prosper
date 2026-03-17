@@ -4,9 +4,10 @@ import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable/index";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { TrendingUp, Mail, Lock, Eye, EyeOff, Chrome } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff, Chrome } from "lucide-react";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
+import kanjiLogo from "@/assets/kanji-logo.png";
 
 const Auth = () => {
   const [isSignUp, setIsSignUp] = useState(false);
