@@ -1,8 +1,30 @@
 import { motion } from "framer-motion";
-import { Wallet, ArrowUpRight, ArrowDownRight, Plus, ArrowDown } from "lucide-react";
+import { Wallet, ArrowUpRight, Plus, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useWallet } from "@/hooks/use-supabase-data";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const WalletCard = () => {
+  const { data: wallet, isLoading } = useWallet();
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-between rounded-xl border border-border bg-card p-5">
+        <div className="space-y-2">
+          <Skeleton className="h-4 w-24" />
+          <Skeleton className="h-8 w-40" />
+          <Skeleton className="h-3 w-32" />
+        </div>
+        <div className="flex gap-3">
+          <Skeleton className="h-10 w-28" />
+          <Skeleton className="h-10 w-28" />
+        </div>
+      </div>
+    );
+  }
+
+  const balance = wallet?.balance ?? 0;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
@@ -18,12 +40,8 @@ const WalletCard = () => {
           </span>
         </div>
         <p className="font-mono text-3xl font-bold tracking-tight text-primary">
-          TSh 5,840,000
+          TSh {balance.toLocaleString()}
         </p>
-        <div className="mt-1.5 flex items-center gap-1 text-xs text-win font-medium">
-          <ArrowUpRight className="h-3 w-3" />
-          +TSh 320,000 this week
-        </div>
       </div>
       <div className="flex gap-3">
         <Button

@@ -1,11 +1,19 @@
 import AppLayout from "@/components/AppLayout";
 import WalletCard from "@/components/WalletCard";
 import SlipCard from "@/components/SlipCard";
-import { MOCK_SLIPS } from "@/lib/mock-data";
+import type { SlipData } from "@/components/SlipCard";
+import { useMyPurchases } from "@/hooks/use-supabase-data";
 import { Wallet, ShoppingBag } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const WalletPage = () => {
-  const purchased = MOCK_SLIPS.filter((s) => !s.locked);
+  const { data: purchases, isLoading } = useMyPurchases();
+
+  const purchasedSlips: SlipData[] = (purchases ?? []).map((p: any) => ({
+    ...p.slips,
+    pundit_name: p.slips?.profiles?.display_name ?? "Unknown",
+    purchased: true,
+  }));
 
   return (
     <AppLayout>
@@ -27,11 +35,21 @@ const WalletPage = () => {
           Purchased Slips
         </h2>
       </div>
-      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-        {purchased.map((slip, i) => (
-          <SlipCard key={slip.id} slip={slip} index={i} />
-        ))}
-      </div>
+      {isLoading ? (
+        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <Skeleton key={i} className="h-48 rounded-xl" />
+          ))}
+        </div>
+      ) : purchasedSlips.length === 0 ? (
+        <p className="text-sm text-muted-foreground py-6 text-center">No purchased slips yet</p>
+      ) : (
+        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+          {purchasedSlips.map((slip, i) => (
+            <SlipCard key={slip.id} slip={slip} index={i} />
+          ))}
+        </div>
+      )}
     </AppLayout>
   );
 };
