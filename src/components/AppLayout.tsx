@@ -40,9 +40,9 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
           <div className="flex items-center gap-3">
             <ThemeToggle />
             <NotificationBell accentClass="bg-cta text-accent-foreground" />
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-xs font-bold text-secondary-foreground">
+            <Link to="/profile" className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-xs font-bold text-secondary-foreground hover:ring-2 hover:ring-primary/30 transition-all">
               JD
-            </div>
+            </Link>
           </div>
         </header>
         <div className="p-4 md:p-6">{children}</div>
