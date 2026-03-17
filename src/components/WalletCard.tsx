@@ -8,31 +8,29 @@ const WalletCard = () => {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="rounded-xl border border-border bg-card p-5"
+      className="flex items-center justify-between rounded-xl border border-border bg-card p-5"
     >
-      <div className="mb-4 flex items-center gap-2 text-muted-foreground">
-        <Wallet className="h-4 w-4" />
-        <span className="text-xs font-medium uppercase tracking-wider">
-          Total Balance
-        </span>
+      <div>
+        <div className="mb-1 flex items-center gap-2 text-muted-foreground">
+          <Wallet className="h-4 w-4" />
+          <span className="text-xs font-medium uppercase tracking-wider">
+            Total Balance
+          </span>
+        </div>
+        <p className="font-mono text-3xl font-bold tracking-tight-custom text-primary">
+          €2,540.50
+        </p>
       </div>
-      <p className="mb-5 font-mono text-3xl font-bold tracking-tight-custom text-foreground">
-        €2,540.50
-      </p>
-      <div className="flex gap-2">
+      <div className="flex gap-3">
         <Button
-          size="sm"
-          className="flex-1 gap-1.5 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold tap-scale"
+          className="gap-1.5 bg-primary text-primary-foreground hover:bg-primary/90 font-bold uppercase tracking-wider tap-scale px-6"
         >
-          <ArrowDownRight className="h-3.5 w-3.5" />
           Deposit
         </Button>
         <Button
-          size="sm"
           variant="outline"
-          className="flex-1 gap-1.5 font-semibold tap-scale"
+          className="gap-1.5 font-bold uppercase tracking-wider tap-scale px-6 border-primary/30 text-primary hover:bg-primary/10"
         >
-          <ArrowUpRight className="h-3.5 w-3.5" />
           Withdraw
         </Button>
       </div>
