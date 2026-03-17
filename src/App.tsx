@@ -29,6 +29,9 @@ import PunditWithdrawals from "./pages/pundit/PunditWithdrawals";
 import PunditReviews from "./pages/pundit/PunditReviews";
 import PunditFollowers from "./pages/pundit/PunditFollowers";
 import PunditPromotions from "./pages/pundit/PunditPromotions";
+import PunditSettings from "./pages/pundit/PunditSettings";
+import Settings from "./pages/Settings";
+import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
