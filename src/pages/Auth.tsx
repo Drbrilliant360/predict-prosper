@@ -51,9 +51,10 @@ const Auth = () => {
         if (error) throw error;
         toast({ title: "Account created!", description: "Check your email to verify your account." });
       } else {
-        const { error } = await supabase.auth.signInWithPassword({ email, password });
+        const { data, error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
-        navigate("/");
+        const path = await getRedirectPath(data.user.id);
+        navigate(path);
       }
     } catch (error: any) {
       toast({ title: "Error", description: error.message, variant: "destructive" });
