@@ -69,8 +69,8 @@ Deno.serve(async (req) => {
           "X-API-KEY": apiKey,
         },
         body: JSON.stringify({
-          buyer_email: user.email || "customer@kanji.app",
-          buyer_name: user.user_metadata?.full_name || user.email?.split("@")[0] || "Customer",
+          buyer_email: userEmail,
+          buyer_name: userEmail.split("@")[0] || "Customer",
           buyer_phone: phoneClean,
           amount: Number(amount),
           currency: "TZS",
