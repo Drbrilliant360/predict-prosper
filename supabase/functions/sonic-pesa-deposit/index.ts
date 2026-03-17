@@ -94,7 +94,7 @@ Deno.serve(async (req) => {
     );
 
     await serviceClient.from("transactions").insert({
-      user_id: user.id,
+      user_id: userId,
       amount: Number(amount),
       type: "deposit",
       status: "pending",
