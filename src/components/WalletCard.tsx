@@ -118,13 +118,6 @@ const WalletCard = () => {
             <Plus className="h-4 w-4" />
             Deposit
           </Button>
-          <Button
-            variant="outline"
-            className="gap-1.5 font-bold uppercase tracking-wider tap-scale px-6 border-primary/30 text-primary hover:bg-primary/10"
-          >
-            <ArrowDown className="h-4 w-4" />
-            Withdraw
-          </Button>
         </div>
       </motion.div>
 
