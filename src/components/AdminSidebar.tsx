@@ -40,7 +40,7 @@ const AdminSidebarContent = ({ onNavigate }: { onNavigate?: () => void }) => {
           <TrendingUp className="h-4 w-4 text-accent-foreground" />
         </div>
         <span className="text-lg font-bold tracking-tight-custom text-foreground">
-          ORACLE
+          KANJI
         </span>
       </div>
       <Link

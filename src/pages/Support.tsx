@@ -54,7 +54,7 @@ const Support = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-primary" />
-                <span className="text-sm text-foreground">support@oracle.co.tz</span>
+                <span className="text-sm text-foreground"><span className="text-sm text-foreground">support@kanji.co.tz</span></span>
               </div>
               <div className="flex items-center gap-3">
                 <MessageSquare className="h-4 w-4 text-primary" />
