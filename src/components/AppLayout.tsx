@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import AppSidebar from "./AppSidebar";
+import ThemeToggle from "./ThemeToggle";
 import { Bell, Search } from "lucide-react";
 
 const AppLayout = ({ children }: { children: ReactNode }) => {
