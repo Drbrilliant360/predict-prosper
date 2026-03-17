@@ -4,9 +4,10 @@ import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable/index";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { TrendingUp, Mail, Lock, Eye, EyeOff, Chrome } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff, Chrome } from "lucide-react";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
+import kanjiLogo from "@/assets/kanji-logo.png";
 
 const Auth = () => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -59,9 +60,7 @@ const Auth = () => {
         className="w-full max-w-sm"
       >
         <div className="mb-8 flex flex-col items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
-            <TrendingUp className="h-6 w-6 text-primary-foreground" />
-          </div>
+          <img src={kanjiLogo} alt="Kanji" className="h-14 w-14 rounded-xl object-cover" />
           <h1 className="text-2xl font-bold tracking-tight text-foreground">KANJI</h1>
           <p className="text-sm text-muted-foreground">
             {isSignUp ? "Create your account" : "Welcome back"}
