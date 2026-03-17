@@ -14,8 +14,8 @@ const sections = [
   {
     title: "Slip Configuration",
     items: [
-      { label: "Min Slip Price", value: "€5.00", desc: "Minimum price pundits can set" },
-      { label: "Max Slip Price", value: "€100.00", desc: "Maximum price per slip" },
+      { label: "Min Slip Price", value: "TSh 1,000", desc: "Minimum price pundits can set" },
+      { label: "Max Slip Price", value: "TSh 50,000", desc: "Maximum price per slip" },
       { label: "Default Expiry", value: "24 hours", desc: "Auto-expire after posting" },
     ],
   },

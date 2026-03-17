@@ -3,16 +3,16 @@ import { motion } from "framer-motion";
 import { ScrollText } from "lucide-react";
 
 const logs = [
-  { id: "LOG001", actor: "Admin (root)", action: "Approved pundit", target: "Court Vision (P002)", ip: "192.168.1.1", timestamp: "2026-03-17 14:30:22" },
-  { id: "LOG002", actor: "Admin (root)", action: "Processed payout", target: "PO001 - €2,340.00", ip: "192.168.1.1", timestamp: "2026-03-17 14:28:15" },
+  { id: "LOG001", actor: "Admin (root)", action: "Approved pundit", target: "Kimaro Bets (P002)", ip: "192.168.1.1", timestamp: "2026-03-17 14:30:22" },
+  { id: "LOG002", actor: "Admin (root)", action: "Processed payout", target: "PO001 - TSh 4,574,700", ip: "192.168.1.1", timestamp: "2026-03-17 14:28:15" },
   { id: "LOG003", actor: "System", action: "Auto-flagged slip", target: "S006 - Fraud check", ip: "—", timestamp: "2026-03-17 14:15:00" },
-  { id: "LOG004", actor: "Admin (root)", action: "Suspended user", target: "Mike Chen (U003)", ip: "192.168.1.1", timestamp: "2026-03-17 13:45:10" },
-  { id: "LOG005", actor: "System", action: "Settled results", target: "42 slips (Premier League)", ip: "—", timestamp: "2026-03-17 13:00:00" },
+  { id: "LOG004", actor: "Admin (root)", action: "Suspended user", target: "Baraka Shao (U003)", ip: "192.168.1.1", timestamp: "2026-03-17 13:45:10" },
+  { id: "LOG005", actor: "System", action: "Settled results", target: "42 slips (NBC Premier League)", ip: "—", timestamp: "2026-03-17 13:00:00" },
   { id: "LOG006", actor: "Admin (mod1)", action: "Removed slip", target: "S098 - Misleading content", ip: "10.0.0.5", timestamp: "2026-03-17 12:30:45" },
   { id: "LOG007", actor: "Admin (root)", action: "Updated commission", target: "15% → 15% (no change)", ip: "192.168.1.1", timestamp: "2026-03-17 11:20:00" },
-  { id: "LOG008", actor: "System", action: "KYC auto-check", target: "Sharp Edge (P005) - Pending", ip: "—", timestamp: "2026-03-17 10:15:30" },
-  { id: "LOG009", actor: "Admin (root)", action: "Banned user", target: "Tom Baker (U007)", ip: "192.168.1.1", timestamp: "2026-03-16 18:00:00" },
-  { id: "LOG010", actor: "System", action: "Refund processed", target: "TX006 - €15.00 to Tom Baker", ip: "—", timestamp: "2026-03-16 17:55:00" },
+  { id: "LOG008", actor: "System", action: "KYC auto-check", target: "Juma Predictions (P005) - Pending", ip: "—", timestamp: "2026-03-17 10:15:30" },
+  { id: "LOG009", actor: "Admin (root)", action: "Banned user", target: "Rashid Mfaume (U007)", ip: "192.168.1.1", timestamp: "2026-03-16 18:00:00" },
+  { id: "LOG010", actor: "System", action: "Refund processed", target: "TX006 - TSh 5,000 to Rashid Mfaume", ip: "—", timestamp: "2026-03-16 17:55:00" },
 ];
 
 const AdminAuditLogs = () => {

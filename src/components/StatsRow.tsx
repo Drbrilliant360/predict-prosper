@@ -5,7 +5,7 @@ const stats = [
   { label: "Active Slips", value: "12", icon: FileText, change: "+3 today" },
   { label: "Win Rate", value: "68%", icon: TrendingUp, change: "+2.1% this week" },
   { label: "Following", value: "8", icon: Users, change: "2 new slips" },
-  { label: "Total Spent", value: "€340", icon: DollarSign, change: "€45 this week" },
+  { label: "Total Spent", value: "TSh 782K", icon: DollarSign, change: "TSh 103K this week" },
 ];
 
 const StatsRow = () => {
