@@ -12,9 +12,9 @@ import {
   Settings,
   Megaphone,
   ScrollText,
-  TrendingUp,
   ArrowLeft,
 } from "lucide-react";
+import kanjiLogo from "@/assets/kanji-logo.png";
 
 const navItems = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/admin" },
