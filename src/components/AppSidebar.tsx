@@ -20,11 +20,11 @@ const navItems = [
   { icon: HelpCircle, label: "Support", path: "/support" },
 ];
 
-const AppSidebar = () => {
+const AppSidebarContent = ({ onNavigate }: { onNavigate?: () => void }) => {
   const location = useLocation();
 
   return (
-    <aside className="fixed left-0 top-0 z-40 flex h-screen w-[220px] flex-col border-r border-border bg-sidebar py-6">
+    <>
       <div className="mb-8 flex items-center gap-2.5 px-5">
         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
           <TrendingUp className="h-4 w-4 text-primary-foreground" />
@@ -41,6 +41,7 @@ const AppSidebar = () => {
             <Link
               key={item.path}
               to={item.path}
+              onClick={onNavigate}
               className="relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors tap-scale"
             >
               {isActive && (
@@ -68,8 +69,9 @@ const AppSidebar = () => {
           );
         })}
       </nav>
-    </aside>
+    </>
   );
 };
 
-export default AppSidebar;
+export { AppSidebarContent };
+export default AppSidebarContent;
