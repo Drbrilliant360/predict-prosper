@@ -1,1 +1,4 @@
 project_id = "mstxshtfpnvrgcybidqx"
+
+[functions.sonic-pesa-webhook]
+verify_jwt = false
