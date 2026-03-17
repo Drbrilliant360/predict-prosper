@@ -11,10 +11,10 @@ import {
   Star,
   Users,
   Megaphone,
-  TrendingUp,
   ArrowLeft,
   Settings,
 } from "lucide-react";
+import kanjiLogo from "@/assets/kanji-logo.png";
 
 const navItems = [
   { icon: Home, label: "Home", path: "/pundit" },
