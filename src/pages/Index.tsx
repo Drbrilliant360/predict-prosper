@@ -1,16 +1,50 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import AppLayout from "@/components/AppLayout";
+import StatsRow from "@/components/StatsRow";
+import LeaderboardTable from "@/components/LeaderboardTable";
+import SlipCard from "@/components/SlipCard";
+import WalletCard from "@/components/WalletCard";
+import FavoritePundits from "@/components/FavoritePundits";
+import { MOCK_SLIPS } from "@/lib/mock-data";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  const activeSlips = MOCK_SLIPS.filter((s) => s.status === "pending");
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <AppLayout>
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold tracking-tight-custom text-foreground">
+          Dashboard
+        </h1>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Verified intelligence for the disciplined bettor.
+        </p>
+      </div>
+
+      <StatsRow />
+
+      <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_280px]">
+        <div className="space-y-6">
+          <LeaderboardTable />
+
+          <div>
+            <h2 className="mb-3 text-sm font-semibold tracking-tight-custom text-foreground">
+              Active Slips
+            </h2>
+            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              {activeSlips.map((slip, i) => (
+                <SlipCard key={slip.id} slip={slip} index={i} />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <WalletCard />
+          <FavoritePundits />
+        </div>
+      </div>
+    </AppLayout>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
