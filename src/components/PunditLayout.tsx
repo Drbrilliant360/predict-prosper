@@ -11,6 +11,7 @@ const PunditLayout = ({ children }: { children: ReactNode }) => {
         <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-border bg-background/80 px-6 backdrop-blur-sm">
           <span className="text-sm font-medium text-muted-foreground">Pundit Panel</span>
           <div className="flex items-center gap-4">
+            <ThemeToggle />
             <button className="relative tap-scale">
               <Bell className="h-[18px] w-[18px] text-muted-foreground hover:text-foreground transition-colors" />
               <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
