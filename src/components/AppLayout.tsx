@@ -1,15 +1,15 @@
 import { ReactNode, useState } from "react";
 import { AppSidebarContent } from "./AppSidebar";
 import ThemeToggle from "./ThemeToggle";
-import { Bell, Search, Menu } from "lucide-react";
+import { Search, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import NotificationBell from "./NotificationBell";
 
 const AppLayout = ({ children }: { children: ReactNode }) => {
   const [open, setOpen] = useState(false);
 
   return (
     <div className="flex min-h-screen bg-background">
-      {/* Desktop sidebar */}
       <aside className="fixed left-0 top-0 z-40 hidden h-screen w-[220px] flex-col border-r border-border bg-sidebar py-6 md:flex">
         <AppSidebarContent />
       </aside>
@@ -17,7 +17,6 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
       <main className="flex-1 md:ml-[220px]">
         <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-border bg-background/80 px-4 md:px-6 backdrop-blur-sm">
           <div className="flex items-center gap-3">
-            {/* Mobile menu trigger */}
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
                 <button className="tap-scale p-1 md:hidden">
@@ -39,12 +38,7 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
           </div>
           <div className="flex items-center gap-3">
             <ThemeToggle />
-            <button className="relative tap-scale">
-              <Bell className="h-[18px] w-[18px] text-muted-foreground hover:text-foreground transition-colors" />
-              <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-cta text-[10px] font-bold text-accent-foreground">
-                3
-              </span>
-            </button>
+            <NotificationBell accentClass="bg-cta text-accent-foreground" />
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-xs font-bold text-secondary-foreground">
               JD
             </div>

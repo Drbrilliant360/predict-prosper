@@ -1,8 +1,9 @@
 import { ReactNode, useState } from "react";
 import { PunditSidebarContent } from "./PunditSidebar";
 import ThemeToggle from "./ThemeToggle";
-import { Bell, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import NotificationBell from "./NotificationBell";
 
 const PunditLayout = ({ children }: { children: ReactNode }) => {
   const [open, setOpen] = useState(false);
@@ -30,12 +31,7 @@ const PunditLayout = ({ children }: { children: ReactNode }) => {
           </div>
           <div className="flex items-center gap-3 md:gap-4">
             <ThemeToggle />
-            <button className="relative tap-scale">
-              <Bell className="h-[18px] w-[18px] text-muted-foreground hover:text-foreground transition-colors" />
-              <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
-                4
-              </span>
-            </button>
+            <NotificationBell accentClass="bg-primary text-primary-foreground" />
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20 text-xs font-bold text-primary">
               BT
             </div>
