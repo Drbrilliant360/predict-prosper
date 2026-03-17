@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import AppSidebar from "./AppSidebar";
+import ThemeToggle from "./ThemeToggle";
 import { Bell, Search } from "lucide-react";
 
 const AppLayout = ({ children }: { children: ReactNode }) => {
@@ -18,7 +19,8 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
               />
             </div>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
             <button className="relative tap-scale">
               <Bell className="h-[18px] w-[18px] text-muted-foreground hover:text-foreground transition-colors" />
               <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-cta text-[10px] font-bold text-accent-foreground">
