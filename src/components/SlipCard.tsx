@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import type { Slip } from "@/lib/mock-data";
-import { Lock, Clock, Check, X, AlertCircle } from "lucide-react";
+import { Lock, Clock, CheckCircle2, XCircle, AlertCircle, Eye, ShieldCheck, Unlock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const statusConfig = {
   pending: { label: "Pending", icon: Clock, className: "text-pending" },
-  won: { label: "Won", icon: Check, className: "text-win" },
-  lost: { label: "Lost", icon: X, className: "text-loss" },
+  won: { label: "Won", icon: CheckCircle2, className: "text-win" },
+  lost: { label: "Lost", icon: XCircle, className: "text-loss" },
   void: { label: "Void", icon: AlertCircle, className: "text-void" },
   expired: { label: "Expired", icon: Clock, className: "text-muted-foreground" },
 };
@@ -17,9 +17,16 @@ const confidenceColors = {
   high: "bg-win/20 text-win",
 };
 
+const confidenceIcons = {
+  low: AlertCircle,
+  medium: ShieldCheck,
+  high: ShieldCheck,
+};
+
 const SlipCard = ({ slip, index = 0 }: { slip: Slip; index?: number }) => {
   const status = statusConfig[slip.status];
   const StatusIcon = status.icon;
+  const ConfIcon = confidenceIcons[slip.confidence];
 
   return (
     <motion.div
@@ -35,20 +42,21 @@ const SlipCard = ({ slip, index = 0 }: { slip: Slip; index?: number }) => {
             {slip.league}
           </span>
           <span
-            className={`inline-flex items-center rounded-md px-1.5 py-0.5 text-[10px] font-semibold ${
+            className={`inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[10px] font-semibold ${
               confidenceColors[slip.confidence]
             }`}
           >
+            <ConfIcon className="h-2.5 w-2.5" />
             {slip.confidence.toUpperCase()}
           </span>
         </div>
         <div className={`flex items-center gap-1 text-xs font-medium ${status.className}`}>
-          <StatusIcon className="h-3 w-3" />
+          <StatusIcon className="h-3.5 w-3.5" />
           {status.label}
         </div>
       </div>
 
-      <h3 className="mb-1 text-sm font-semibold text-foreground tracking-tight-custom">
+      <h3 className="mb-1 text-sm font-semibold text-foreground tracking-tight">
         {slip.match}
       </h3>
       <p className="mb-3 text-xs text-muted-foreground">
@@ -81,16 +89,18 @@ const SlipCard = ({ slip, index = 0 }: { slip: Slip; index?: number }) => {
         {slip.locked ? (
           <Button
             size="sm"
-            className="h-8 bg-cta text-accent-foreground hover:bg-cta-hover font-semibold text-xs tap-scale"
+            className="h-8 gap-1.5 bg-cta text-accent-foreground hover:bg-cta-hover font-semibold text-xs tap-scale"
           >
-            Unlock TSh {slip.price.toLocaleString()}
+            <Unlock className="h-3 w-3" />
+            TSh {slip.price.toLocaleString()}
           </Button>
         ) : (
           <Button
             size="sm"
             variant="outline"
-            className="h-8 text-xs"
+            className="h-8 gap-1.5 text-xs"
           >
+            <Eye className="h-3 w-3" />
             View
           </Button>
         )}
