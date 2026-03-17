@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import AdminSidebar from "./AdminSidebar";
+import ThemeToggle from "./ThemeToggle";
 import { Bell, Shield } from "lucide-react";
 
 const AdminLayout = ({ children }: { children: ReactNode }) => {
