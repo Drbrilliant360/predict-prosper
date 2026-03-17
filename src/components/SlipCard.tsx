@@ -1,7 +1,22 @@
 import { motion } from "framer-motion";
-import type { Slip } from "@/lib/mock-data";
 import { Lock, Clock, CheckCircle2, XCircle, AlertCircle, Eye, ShieldCheck, Unlock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+export interface SlipData {
+  id: string;
+  match_name: string;
+  league: string;
+  market: string;
+  bookmaker: string;
+  odds: number;
+  price: number;
+  confidence: "low" | "medium" | "high";
+  risk: "low" | "medium" | "high";
+  status: "pending" | "won" | "lost" | "void" | "expired";
+  prediction?: string | null;
+  pundit_name?: string;
+  purchased?: boolean;
+}
 
 const statusConfig = {
   pending: { label: "Pending", icon: Clock, className: "text-pending" },
@@ -23,10 +38,11 @@ const confidenceIcons = {
   high: ShieldCheck,
 };
 
-const SlipCard = ({ slip, index = 0 }: { slip: Slip; index?: number }) => {
+const SlipCard = ({ slip, index = 0 }: { slip: SlipData; index?: number }) => {
   const status = statusConfig[slip.status];
   const StatusIcon = status.icon;
   const ConfIcon = confidenceIcons[slip.confidence];
+  const isLocked = !slip.purchased;
 
   return (
     <motion.div
@@ -42,9 +58,7 @@ const SlipCard = ({ slip, index = 0 }: { slip: Slip; index?: number }) => {
             {slip.league}
           </span>
           <span
-            className={`inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[10px] font-semibold ${
-              confidenceColors[slip.confidence]
-            }`}
+            className={`inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[10px] font-semibold ${confidenceColors[slip.confidence]}`}
           >
             <ConfIcon className="h-2.5 w-2.5" />
             {slip.confidence.toUpperCase()}
@@ -57,13 +71,13 @@ const SlipCard = ({ slip, index = 0 }: { slip: Slip; index?: number }) => {
       </div>
 
       <h3 className="mb-1 text-sm font-semibold text-foreground tracking-tight">
-        {slip.match}
+        {slip.match_name}
       </h3>
       <p className="mb-3 text-xs text-muted-foreground">
         {slip.market} · {slip.bookmaker}
       </p>
 
-      {slip.locked ? (
+      {isLocked ? (
         <div className="relative mb-3 overflow-hidden rounded-lg bg-muted/30 p-3">
           <div className="absolute inset-0 backdrop-blur-md" />
           <div className="relative z-10 flex flex-col items-center gap-1 py-2">
@@ -71,22 +85,24 @@ const SlipCard = ({ slip, index = 0 }: { slip: Slip; index?: number }) => {
             <span className="text-xs text-muted-foreground">Prediction locked</span>
           </div>
         </div>
-      ) : (
+      ) : slip.prediction ? (
         <div className="mb-3 rounded-lg bg-primary/5 border border-primary/10 p-3">
           <p className="text-sm text-foreground">{slip.prediction}</p>
         </div>
-      )}
+      ) : null}
 
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <span className="font-mono text-sm font-semibold text-foreground">
             @{slip.odds}
           </span>
-          <span className="text-xs text-muted-foreground">
-            by {slip.punditName}
-          </span>
+          {slip.pundit_name && (
+            <span className="text-xs text-muted-foreground">
+              by {slip.pundit_name}
+            </span>
+          )}
         </div>
-        {slip.locked ? (
+        {isLocked ? (
           <Button
             size="sm"
             className="h-8 gap-1.5 bg-cta text-accent-foreground hover:bg-cta-hover font-semibold text-xs tap-scale"
