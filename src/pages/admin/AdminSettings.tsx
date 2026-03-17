@@ -7,8 +7,8 @@ const sections = [
     title: "Platform Fees",
     items: [
       { label: "Commission Rate", value: "15%", desc: "Applied to all pundit earnings" },
-      { label: "Payment Processing Fee", value: "2.9% + €0.30", desc: "Per transaction" },
-      { label: "Withdrawal Fee", value: "€1.50", desc: "Per payout request" },
+      { label: "Payment Processing Fee", value: "2.9% + TSh 700", desc: "Per transaction" },
+      { label: "Withdrawal Fee", value: "TSh 3,500", desc: "Per payout request" },
     ],
   },
   {
