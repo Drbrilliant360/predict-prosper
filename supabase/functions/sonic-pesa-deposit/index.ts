@@ -14,7 +14,7 @@ Deno.serve(async (req) => {
   try {
     // Authenticate user
     const authHeader = req.headers.get("Authorization");
-    if (!authHeader) {
+    if (!authHeader?.startsWith("Bearer ")) {
       return new Response(JSON.stringify({ error: "Unauthorized" }), {
         status: 401,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -27,16 +27,17 @@ Deno.serve(async (req) => {
       global: { headers: { Authorization: authHeader } },
     });
 
-    const {
-      data: { user },
-      error: authError,
-    } = await supabase.auth.getUser();
-    if (authError || !user) {
+    const token = authHeader.replace("Bearer ", "");
+    const { data: claimsData, error: authError } = await supabase.auth.getClaims(token);
+    if (authError || !claimsData?.claims) {
       return new Response(JSON.stringify({ error: "Unauthorized" }), {
         status: 401,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
+
+    const userId = claimsData.claims.sub as string;
+    const userEmail = (claimsData.claims.email as string) || "customer@kanji.app";
 
     const { phone, amount } = await req.json();
 
@@ -68,8 +69,8 @@ Deno.serve(async (req) => {
           "X-API-KEY": apiKey,
         },
         body: JSON.stringify({
-          buyer_email: user.email || "customer@kanji.app",
-          buyer_name: user.user_metadata?.full_name || user.email?.split("@")[0] || "Customer",
+          buyer_email: userEmail,
+          buyer_name: userEmail.split("@")[0] || "Customer",
           buyer_phone: phoneClean,
           amount: Number(amount),
           currency: "TZS",
@@ -93,7 +94,7 @@ Deno.serve(async (req) => {
     );
 
     await serviceClient.from("transactions").insert({
-      user_id: user.id,
+      user_id: userId,
       amount: Number(amount),
       type: "deposit",
       status: "pending",
