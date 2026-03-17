@@ -30,7 +30,7 @@ const AppSidebarContent = ({ onNavigate }: { onNavigate?: () => void }) => {
           <TrendingUp className="h-4 w-4 text-primary-foreground" />
         </div>
         <span className="text-lg font-bold tracking-tight-custom text-foreground">
-          ORACLE
+          KANJI
         </span>
       </div>
 

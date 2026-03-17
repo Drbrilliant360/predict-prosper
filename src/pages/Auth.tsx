@@ -62,7 +62,7 @@ const Auth = () => {
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
             <TrendingUp className="h-6 w-6 text-primary-foreground" />
           </div>
-          <h1 className="text-2xl font-bold tracking-tight text-foreground">ORACLE</h1>
+          <h1 className="text-2xl font-bold tracking-tight text-foreground">KANJI</h1>
           <p className="text-sm text-muted-foreground">
             {isSignUp ? "Create your account" : "Welcome back"}
           </p>
