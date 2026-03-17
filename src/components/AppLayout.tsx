@@ -1,4 +1,5 @@
 import { ReactNode, useState } from "react";
+import { Link } from "react-router-dom";
 import { AppSidebarContent } from "./AppSidebar";
 import ThemeToggle from "./ThemeToggle";
 import { Search, Menu } from "lucide-react";
