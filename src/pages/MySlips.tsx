@@ -1,7 +1,7 @@
 import AppLayout from "@/components/AppLayout";
 import SlipCard from "@/components/SlipCard";
 import type { SlipData } from "@/components/SlipCard";
-import { useMyPurchases, useSlips } from "@/hooks/use-supabase-data";
+import { useMyPurchases } from "@/hooks/use-supabase-data";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FileText, Zap, CheckCircle2, Layers } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -25,13 +25,13 @@ const MySlips = () => {
           <FileText className="h-4.5 w-4.5 text-primary" />
         </div>
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-foreground">My Slips</h1>
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">My Slips</h1>
           <p className="text-xs text-muted-foreground">Track your purchased predictions</p>
         </div>
       </div>
 
       {isLoading ? (
-        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
           {Array.from({ length: 3 }).map((_, i) => (
             <Skeleton key={i} className="h-48 rounded-xl" />
           ))}
@@ -42,22 +42,22 @@ const MySlips = () => {
         </p>
       ) : (
         <Tabs defaultValue="active" className="w-full">
-          <TabsList className="mb-4 bg-secondary">
-            <TabsTrigger value="active" className="gap-1.5">
+          <TabsList className="mb-4 bg-secondary w-full sm:w-auto">
+            <TabsTrigger value="active" className="gap-1.5 flex-1 sm:flex-initial">
               <Zap className="h-3.5 w-3.5" />
               Active ({active.length})
             </TabsTrigger>
-            <TabsTrigger value="settled" className="gap-1.5">
+            <TabsTrigger value="settled" className="gap-1.5 flex-1 sm:flex-initial">
               <CheckCircle2 className="h-3.5 w-3.5" />
               Settled ({settled.length})
             </TabsTrigger>
-            <TabsTrigger value="all" className="gap-1.5">
+            <TabsTrigger value="all" className="gap-1.5 flex-1 sm:flex-initial">
               <Layers className="h-3.5 w-3.5" />
               All ({allSlips.length})
             </TabsTrigger>
           </TabsList>
           <TabsContent value="active">
-            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+            <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
               {active.map((slip, i) => (
                 <SlipCard key={slip.id} slip={slip} index={i} />
               ))}
@@ -67,7 +67,7 @@ const MySlips = () => {
             )}
           </TabsContent>
           <TabsContent value="settled">
-            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+            <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
               {settled.map((slip, i) => (
                 <SlipCard key={slip.id} slip={slip} index={i} />
               ))}
@@ -77,7 +77,7 @@ const MySlips = () => {
             )}
           </TabsContent>
           <TabsContent value="all">
-            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+            <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
               {allSlips.map((slip, i) => (
                 <SlipCard key={slip.id} slip={slip} index={i} />
               ))}

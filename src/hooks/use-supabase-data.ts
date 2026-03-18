@@ -7,6 +7,7 @@ export const useWallet = () => {
   return useQuery({
     queryKey: ["wallet", user?.id],
     enabled: !!user,
+    staleTime: 30_000,
     queryFn: async () => {
       const { data, error } = await supabase
         .from("wallets")
@@ -24,6 +25,7 @@ export const useProfile = () => {
   return useQuery({
     queryKey: ["profile", user?.id],
     enabled: !!user,
+    staleTime: 60_000,
     queryFn: async () => {
       const { data, error } = await supabase
         .from("profiles")
@@ -39,10 +41,11 @@ export const useProfile = () => {
 export const usePunditProfiles = () => {
   return useQuery({
     queryKey: ["pundit_profiles"],
+    staleTime: 60_000,
     queryFn: async () => {
       const { data, error } = await supabase
         .from("pundit_profiles")
-        .select("*, profiles!inner(display_name, avatar_url)")
+        .select("*, profiles!pundit_profiles_user_id_profiles_fkey(display_name, avatar_url)")
         .order("roi", { ascending: false });
       if (error) throw error;
       return data;
@@ -53,10 +56,11 @@ export const usePunditProfiles = () => {
 export const useSlips = () => {
   return useQuery({
     queryKey: ["slips"],
+    staleTime: 30_000,
     queryFn: async () => {
       const { data, error } = await supabase
         .from("slips")
-        .select("*, profiles:pundit_id(display_name)")
+        .select("*, profiles!slips_pundit_id_profiles_fkey(display_name)")
         .order("created_at", { ascending: false });
       if (error) throw error;
       return data;
@@ -69,10 +73,11 @@ export const useMyPurchases = () => {
   return useQuery({
     queryKey: ["purchases", user?.id],
     enabled: !!user,
+    staleTime: 30_000,
     queryFn: async () => {
       const { data, error } = await supabase
         .from("purchases")
-        .select("*, slips(*, profiles:pundit_id(display_name))")
+        .select("*, slips(*, profiles!slips_pundit_id_profiles_fkey(display_name))")
         .eq("user_id", user!.id)
         .order("created_at", { ascending: false });
       if (error) throw error;
@@ -86,10 +91,11 @@ export const useFollowedPunters = () => {
   return useQuery({
     queryKey: ["followed_punters", user?.id],
     enabled: !!user,
+    staleTime: 60_000,
     queryFn: async () => {
       const { data, error } = await supabase
         .from("followers")
-        .select("*, pundit_profiles:pundit_id(*, profiles:user_id(display_name, avatar_url))")
+        .select("*, profiles!followers_pundit_id_profiles_fkey(display_name, avatar_url)")
         .eq("follower_id", user!.id);
       if (error) throw error;
       return data;
@@ -102,6 +108,7 @@ export const useTransactions = () => {
   return useQuery({
     queryKey: ["transactions", user?.id],
     enabled: !!user,
+    staleTime: 30_000,
     queryFn: async () => {
       const { data, error } = await supabase
         .from("transactions")

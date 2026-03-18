@@ -34,12 +34,12 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
         <AppSidebarContent />
       </aside>
 
-      <main className="flex-1 md:ml-[220px]">
-        <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-border bg-background/80 px-4 md:px-6 backdrop-blur-sm">
-          <div className="flex items-center gap-3">
+      <main className="flex-1 md:ml-[220px] w-full min-w-0">
+        <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-border bg-background/80 px-3 sm:px-4 md:px-6 backdrop-blur-sm gap-2">
+          <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
-                <button className="tap-scale p-1 md:hidden">
+                <button className="tap-scale p-1 md:hidden flex-shrink-0">
                   <Menu className="h-5 w-5 text-foreground" />
                 </button>
               </SheetTrigger>
@@ -47,21 +47,21 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
                 <AppSidebarContent onNavigate={() => setOpen(false)} />
               </SheetContent>
             </Sheet>
-            <div className="flex h-9 items-center gap-2 rounded-lg border border-border bg-secondary/50 px-3">
-              <Search className="h-3.5 w-3.5 text-muted-foreground" />
+            <div className="flex h-9 items-center gap-2 rounded-lg border border-border bg-secondary/50 px-3 flex-1 min-w-0 max-w-xs sm:max-w-sm">
+              <Search className="h-3.5 w-3.5 text-muted-foreground flex-shrink-0" />
               <input
                 type="text"
-                placeholder="Search punters, matches..."
-                className="w-32 md:w-56 bg-transparent text-sm text-foreground placeholder:text-muted-foreground outline-none"
+                placeholder="Search..."
+                className="w-full bg-transparent text-sm text-foreground placeholder:text-muted-foreground outline-none"
               />
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             <ThemeToggle />
             <NotificationBell accentClass="bg-cta text-accent-foreground" />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-xs font-bold text-secondary-foreground hover:ring-2 hover:ring-primary/30 transition-all">
+                <button className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-xs font-bold text-secondary-foreground hover:ring-2 hover:ring-primary/30 transition-all flex-shrink-0">
                   {initials}
                 </button>
               </DropdownMenuTrigger>
@@ -81,7 +81,7 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
             </DropdownMenu>
           </div>
         </header>
-        <div className="p-4 md:p-6">{children}</div>
+        <div className="p-3 sm:p-4 md:p-6">{children}</div>
       </main>
     </div>
   );
