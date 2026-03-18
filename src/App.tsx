@@ -21,6 +21,7 @@ import AdminReports from "./pages/admin/AdminReports";
 import AdminSettings from "./pages/admin/AdminSettings";
 import AdminAds from "./pages/admin/AdminAds";
 import AdminAuditLogs from "./pages/admin/AdminAuditLogs";
+import AdminKYC from "./pages/admin/AdminKYC";
 import PunditDashboard from "./pages/pundit/PunditDashboard";
 import PunditProfile from "./pages/pundit/PunditProfile";
 import CreateSlip from "./pages/pundit/CreateSlip";
