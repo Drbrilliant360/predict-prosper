@@ -136,9 +136,10 @@ const Auth = () => {
   };
 
   const canProceedStep = (s: number): boolean => {
-    if (s === 0) return email.length > 0 && password.length >= 6;
-    if (s === 1) return fullName.length > 0 && phone.length > 0 && dateOfBirth.length > 0;
-    if (s === 2) return idNumber.length > 0;
+    if (s === 0) return registerAs !== "";
+    if (s === 1) return email.length > 0 && password.length >= 6;
+    if (s === 2) return fullName.length > 0 && phone.length > 0 && dateOfBirth.length > 0;
+    if (s === 3) return idNumber.length > 0;
     return true;
   };
 
