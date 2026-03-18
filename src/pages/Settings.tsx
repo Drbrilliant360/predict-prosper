@@ -10,7 +10,7 @@ const sections = [
     icon: Bell,
     items: [
       { label: "Slip Results", desc: "Get notified when your purchased slips settle", defaultOn: true },
-      { label: "New Slips from Favourites", desc: "Alert when favourite pundits post new slips", defaultOn: true },
+      { label: "New Slips from Favourites", desc: "Alert when favourite punters post new slips", defaultOn: true },
       { label: "Promotions & Offers", desc: "Receive discount and bundle notifications", defaultOn: false },
     ],
   },

@@ -51,7 +51,7 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
               <Search className="h-3.5 w-3.5 text-muted-foreground" />
               <input
                 type="text"
-                placeholder="Search pundits, matches..."
+                placeholder="Search punters, matches..."
                 className="w-32 md:w-56 bg-transparent text-sm text-foreground placeholder:text-muted-foreground outline-none"
               />
             </div>

@@ -47,7 +47,7 @@ const PunditLayout = ({ children }: { children: ReactNode }) => {
                 <PunditSidebarContent onNavigate={() => setOpen(false)} />
               </SheetContent>
             </Sheet>
-            <span className="text-sm font-medium text-muted-foreground">Pundit Panel</span>
+            <span className="text-sm font-medium text-muted-foreground">Punter Panel</span>
           </div>
           <div className="flex items-center gap-3 md:gap-4">
             <ThemeToggle />
@@ -60,10 +60,10 @@ const PunditLayout = ({ children }: { children: ReactNode }) => {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-48">
                 <DropdownMenuItem asChild>
-                  <Link to="/pundit/profile">My Profile</Link>
+                  <Link to="/punter/profile">My Profile</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/pundit/settings">Settings</Link>
+                  <Link to="/punter/settings">Settings</Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={handleSignOut} className="text-destructive">

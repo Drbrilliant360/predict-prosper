@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 import { AlertTriangle } from "lucide-react";
 
 const disputes = [
-  { id: "D001", user: "Juma Mwalimu", pundit: "Bongo Tips", slip: "S001", reason: "Slip posted after match started", amount: "TSh 5,000", status: "open", opened: "2026-03-17" },
-  { id: "D002", user: "Baraka Shao", pundit: "Kimaro Bets", slip: "S003", reason: "Wrong odds displayed", amount: "TSh 3,500", status: "under_review", opened: "2026-03-16" },
-  { id: "D003", user: "Lilian Moshi", pundit: "Daktari wa Odds", slip: "S004", reason: "Duplicate slip content", amount: "TSh 5,000", status: "resolved", opened: "2026-03-15" },
-  { id: "D004", user: "Neema Kimaro", pundit: "Msimbazi Edge", slip: "S005", reason: "Prediction changed after purchase", amount: "TSh 3,500", status: "open", opened: "2026-03-17" },
-  { id: "D005", user: "Amina Hassan", pundit: "Juma Predictions", slip: "S006", reason: "Suspected fake screenshot", amount: "TSh 4,000", status: "escalated", opened: "2026-03-14" },
+  { id: "D001", user: "Juma Mwalimu", punter: "Bongo Tips", slip: "S001", reason: "Slip posted after match started", amount: "TSh 5,000", status: "open", opened: "2026-03-17" },
+  { id: "D002", user: "Baraka Shao", punter: "Kimaro Bets", slip: "S003", reason: "Wrong odds displayed", amount: "TSh 3,500", status: "under_review", opened: "2026-03-16" },
+  { id: "D003", user: "Lilian Moshi", punter: "Daktari wa Odds", slip: "S004", reason: "Duplicate slip content", amount: "TSh 5,000", status: "resolved", opened: "2026-03-15" },
+  { id: "D004", user: "Neema Kimaro", punter: "Msimbazi Edge", slip: "S005", reason: "Prediction changed after purchase", amount: "TSh 3,500", status: "open", opened: "2026-03-17" },
+  { id: "D005", user: "Amina Hassan", punter: "Juma Predictions", slip: "S006", reason: "Suspected fake screenshot", amount: "TSh 4,000", status: "escalated", opened: "2026-03-14" },
 ];
 
 const statusStyles: Record<string, string> = {
@@ -49,7 +49,7 @@ const AdminDisputes = () => {
                   </div>
                   <p className="text-sm font-medium text-foreground mb-1">{d.reason}</p>
                   <p className="text-xs text-muted-foreground">
-                    {d.user} vs {d.pundit} · Slip {d.slip} · {d.amount}
+                    {d.user} vs {d.punter} · Slip {d.slip} · {d.amount}
                   </p>
                 </div>
               </div>

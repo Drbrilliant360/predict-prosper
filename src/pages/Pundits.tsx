@@ -5,8 +5,8 @@ import { Shield, TrendingUp, Target, BarChart3, UserPlus, Eye, Users2, Sparkles 
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 
-const Pundits = () => {
-  const { data: pundits, isLoading } = usePunditProfiles();
+const Punters = () => {
+  const { data: punters, isLoading } = usePunditProfiles();
 
   return (
     <AppLayout>
@@ -15,7 +15,7 @@ const Pundits = () => {
           <Users2 className="h-4.5 w-4.5 text-primary" />
         </div>
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-foreground">Pundits</h1>
+          <h1 className="text-2xl font-bold tracking-tight text-foreground">Punters</h1>
           <p className="text-xs text-muted-foreground">Browse top prediction experts</p>
         </div>
       </div>
@@ -26,18 +26,18 @@ const Pundits = () => {
             <Skeleton key={i} className="h-56 rounded-xl" />
           ))}
         </div>
-      ) : (pundits ?? []).length === 0 ? (
+      ) : (punters ?? []).length === 0 ? (
         <p className="text-sm text-muted-foreground py-12 text-center">
-          No pundits available yet. Check back soon!
+          No punters available yet. Check back soon!
         </p>
       ) : (
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3 mb-8">
-          {(pundits ?? []).map((pundit, i) => {
+          {(punters ?? []).map((punter, i) => {
             const profile = pundit.profiles as any;
             const name = profile?.display_name ?? "Unknown";
             return (
               <motion.div
-                key={pundit.id}
+                key={punter.id}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05, duration: 0.35 }}
@@ -50,11 +50,11 @@ const Pundits = () => {
                   <div className="flex-1">
                     <div className="flex items-center gap-1.5">
                       <span className="font-semibold text-foreground text-sm">{name}</span>
-                      {pundit.verified && <Shield className="h-3.5 w-3.5 text-primary" />}
+                      {punter.verified && <Shield className="h-3.5 w-3.5 text-primary" />}
                     </div>
                     <div className="flex items-center gap-1 text-xs text-muted-foreground">
                       <Sparkles className="h-3 w-3" />
-                      {pundit.sport}
+                      {punter.sport}
                     </div>
                   </div>
                 </div>
@@ -63,21 +63,21 @@ const Pundits = () => {
                     <div className="flex items-center justify-center gap-1 mb-0.5">
                       <Target className="h-3 w-3 text-muted-foreground" />
                     </div>
-                    <p className="font-mono text-sm font-bold text-foreground">{pundit.win_rate ?? 0}%</p>
+                    <p className="font-mono text-sm font-bold text-foreground">{punter.win_rate ?? 0}%</p>
                     <p className="text-[10px] text-muted-foreground">Win Rate</p>
                   </div>
                   <div className="rounded-lg bg-secondary/50 p-2 text-center">
                     <div className="flex items-center justify-center gap-1 mb-0.5">
                       <TrendingUp className="h-3 w-3 text-win" />
                     </div>
-                    <p className="font-mono text-sm font-bold text-win">+{pundit.roi ?? 0}%</p>
+                    <p className="font-mono text-sm font-bold text-win">+{punter.roi ?? 0}%</p>
                     <p className="text-[10px] text-muted-foreground">ROI</p>
                   </div>
                   <div className="rounded-lg bg-secondary/50 p-2 text-center">
                     <div className="flex items-center justify-center gap-1 mb-0.5">
                       <BarChart3 className="h-3 w-3 text-muted-foreground" />
                     </div>
-                    <p className="font-mono text-sm font-bold text-foreground">{pundit.total_slips ?? 0}</p>
+                    <p className="font-mono text-sm font-bold text-foreground">{punter.total_slips ?? 0}</p>
                     <p className="text-[10px] text-muted-foreground">Picks</p>
                   </div>
                 </div>

@@ -3,10 +3,10 @@ import { Shield, Star, Heart } from "lucide-react";
 import { usePunditProfiles } from "@/hooks/use-supabase-data";
 import { Skeleton } from "@/components/ui/skeleton";
 
-const FavoritePundits = () => {
-  const { data: pundits, isLoading } = usePunditProfiles();
+const FavoritePunters = () => {
+  const { data: punters, isLoading } = usePunditProfiles();
 
-  const topPundits = (pundits ?? []).slice(0, 5);
+  const topPundits = (punters ?? []).slice(0, 5);
 
   return (
     <motion.div
@@ -18,7 +18,7 @@ const FavoritePundits = () => {
       <div className="flex items-center gap-2 border-b border-border px-4 py-3">
         <Heart className="h-4 w-4 text-primary" />
         <h2 className="text-sm font-semibold tracking-tight text-foreground">
-          Top Pundits
+          Top Punters
         </h2>
       </div>
       <div className="divide-y divide-border/50">
@@ -33,15 +33,15 @@ const FavoritePundits = () => {
               <Skeleton className="h-5 w-12 rounded-md" />
             </div>
           ))
-        ) : topPundits.length === 0 ? (
-          <p className="px-4 py-6 text-center text-sm text-muted-foreground">No pundits yet</p>
+        ) : topPunters.length === 0 ? (
+          <p className="px-4 py-6 text-center text-sm text-muted-foreground">No punters yet</p>
         ) : (
-          topPundits.map((pundit) => {
+          topPunters.map((punter) => {
             const profile = pundit.profiles as any;
             const name = profile?.display_name ?? "Unknown";
             return (
               <div
-                key={pundit.id}
+                key={punter.id}
                 className="flex items-center gap-3 px-4 py-3 transition-colors hover:bg-secondary/30 cursor-pointer tap-scale"
               >
                 <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
@@ -52,11 +52,11 @@ const FavoritePundits = () => {
                     <span className="text-sm font-medium text-foreground truncate">
                       {name}
                     </span>
-                    {pundit.verified && (
+                    {punter.verified && (
                       <Shield className="h-3 w-3 flex-shrink-0 text-primary" />
                     )}
                   </div>
-                  <span className="text-[11px] text-muted-foreground">{pundit.sport}</span>
+                  <span className="text-[11px] text-muted-foreground">{punter.sport}</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Star className="h-3 w-3 text-yellow-500 fill-yellow-500" />

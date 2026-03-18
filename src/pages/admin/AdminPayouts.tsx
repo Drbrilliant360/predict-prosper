@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Banknote } from "lucide-react";
 
 const payouts = [
-  { id: "PO001", pundit: "Bongo Tips", amount: "TSh 5,382,000", commission: "TSh 807,300", net: "TSh 4,574,700", method: "M-Pesa", status: "completed", date: "2026-03-16" },
-  { id: "PO002", pundit: "Daktari wa Odds", amount: "TSh 4,186,000", commission: "TSh 627,900", net: "TSh 3,558,100", method: "Tigo Pesa", status: "processing", date: "2026-03-17" },
-  { id: "PO003", pundit: "Kimaro Bets", amount: "TSh 2,185,000", commission: "TSh 327,750", net: "TSh 1,857,250", method: "Bank Transfer", status: "pending", date: "2026-03-17" },
-  { id: "PO004", pundit: "Msimbazi Edge", amount: "TSh 1,426,000", commission: "TSh 213,900", net: "TSh 1,212,100", method: "M-Pesa", status: "pending", date: "2026-03-17" },
-  { id: "PO005", pundit: "Juma Predictions", amount: "TSh 0", commission: "TSh 0", net: "TSh 0", method: "—", status: "held", date: "—" },
+  { id: "PO001", punter: "Bongo Tips", amount: "TSh 5,382,000", commission: "TSh 807,300", net: "TSh 4,574,700", method: "M-Pesa", status: "completed", date: "2026-03-16" },
+  { id: "PO002", punter: "Daktari wa Odds", amount: "TSh 4,186,000", commission: "TSh 627,900", net: "TSh 3,558,100", method: "Tigo Pesa", status: "processing", date: "2026-03-17" },
+  { id: "PO003", punter: "Kimaro Bets", amount: "TSh 2,185,000", commission: "TSh 327,750", net: "TSh 1,857,250", method: "Bank Transfer", status: "pending", date: "2026-03-17" },
+  { id: "PO004", punter: "Msimbazi Edge", amount: "TSh 1,426,000", commission: "TSh 213,900", net: "TSh 1,212,100", method: "M-Pesa", status: "pending", date: "2026-03-17" },
+  { id: "PO005", punter: "Juma Predictions", amount: "TSh 0", commission: "TSh 0", net: "TSh 0", method: "—", status: "held", date: "—" },
 ];
 
 const statusStyles: Record<string, string> = {
@@ -23,7 +23,7 @@ const AdminPayouts = () => {
     <AdminLayout>
       <div className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight-custom text-foreground">Payouts</h1>
-        <p className="mt-1 text-sm text-muted-foreground">Manage pundit withdrawal requests and payouts.</p>
+        <p className="mt-1 text-sm text-muted-foreground">Manage punter withdrawal requests and payouts.</p>
       </div>
 
       <div className="rounded-xl border border-border bg-card overflow-hidden">
@@ -51,7 +51,7 @@ const AdminPayouts = () => {
                 className="border-b border-border/50 last:border-0 hover:bg-secondary/30 transition-colors"
               >
                 <td className="px-4 py-3 font-mono text-xs text-muted-foreground">{p.id}</td>
-                <td className="px-4 py-3 text-sm font-medium text-foreground">{p.pundit}</td>
+                <td className="px-4 py-3 text-sm font-medium text-foreground">{p.punter}</td>
                 <td className="px-4 py-3 text-right font-mono text-sm text-foreground">{p.amount}</td>
                 <td className="px-4 py-3 text-right font-mono text-xs text-muted-foreground">{p.commission}</td>
                 <td className="px-4 py-3 text-right font-mono text-sm font-medium text-win">{p.net}</td>

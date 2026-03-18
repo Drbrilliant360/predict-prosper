@@ -11,7 +11,7 @@ const Leaderboard = () => {
         </div>
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-foreground">Leaderboard</h1>
-          <p className="text-xs text-muted-foreground">Top performing pundits ranked by ROI</p>
+          <p className="text-xs text-muted-foreground">Top performing punters ranked by ROI</p>
         </div>
       </div>
       <LeaderboardTable />
