@@ -100,4 +100,4 @@ const Punters = () => {
   );
 };
 
-export default Pundits;
+export default Punters;

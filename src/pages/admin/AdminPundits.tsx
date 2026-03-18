@@ -96,4 +96,4 @@ const AdminPunters = () => {
   );
 };
 
-export default AdminPundits;
+export default AdminPunters;
