@@ -22,7 +22,7 @@ const getRedirectPath = async (userId: string): Promise<string> => {
   return "/";
 };
 
-const STEPS = ["Account", "Personal", "Identity", "Documents"];
+const STEPS = ["Role", "Account", "Personal", "Identity", "Documents"];
 
 const Auth = () => {
   const [isSignUp, setIsSignUp] = useState(false);
