@@ -60,10 +60,10 @@ const PunditLayout = ({ children }: { children: ReactNode }) => {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-48">
                 <DropdownMenuItem asChild>
-                  <Link to="/punter/profile">My Profile</Link>
+                  <Link to="/pundit/profile">My Profile</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/punter/settings">Settings</Link>
+                  <Link to="/pundit/settings">Settings</Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={handleSignOut} className="text-destructive">
