@@ -13,6 +13,7 @@ import {
   Megaphone,
   ScrollText,
   ArrowLeft,
+  ShieldCheck,
 } from "lucide-react";
 import kanjiLogo from "@/assets/kanji-logo.png";
 
