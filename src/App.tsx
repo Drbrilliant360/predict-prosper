@@ -73,18 +73,18 @@ const App = () => (
             <Route path="/admin/ads" element={<ProtectedRoute requiredRole="admin"><AdminAds /></ProtectedRoute>} />
             <Route path="/admin/audit-logs" element={<ProtectedRoute requiredRole="admin"><AdminAuditLogs /></ProtectedRoute>} />
 
-            {/* Pundit routes - protected */}
-            <Route path="/punter" element={<ProtectedRoute requiredRole="punter"><PunditDashboard /></ProtectedRoute>} />
-            <Route path="/punter/profile" element={<ProtectedRoute requiredRole="punter"><PunditProfile /></ProtectedRoute>} />
-            <Route path="/punter/create-slip" element={<ProtectedRoute requiredRole="punter"><CreateSlip /></ProtectedRoute>} />
-            <Route path="/punter/slips" element={<ProtectedRoute requiredRole="punter"><ManageSlips /></ProtectedRoute>} />
-            <Route path="/punter/analytics" element={<ProtectedRoute requiredRole="punter"><PunditAnalytics /></ProtectedRoute>} />
-            <Route path="/punter/sales" element={<ProtectedRoute requiredRole="punter"><PunditSales /></ProtectedRoute>} />
-            <Route path="/punter/withdrawals" element={<ProtectedRoute requiredRole="punter"><PunditWithdrawals /></ProtectedRoute>} />
-            <Route path="/punter/reviews" element={<ProtectedRoute requiredRole="punter"><PunditReviews /></ProtectedRoute>} />
-            <Route path="/punter/followers" element={<ProtectedRoute requiredRole="punter"><PunditFollowers /></ProtectedRoute>} />
-            <Route path="/punter/promotions" element={<ProtectedRoute requiredRole="punter"><PunditPromotions /></ProtectedRoute>} />
-            <Route path="/punter/settings" element={<ProtectedRoute requiredRole="punter"><PunditSettings /></ProtectedRoute>} />
+            {/* Punter routes - protected */}
+            <Route path="/pundit" element={<ProtectedRoute requiredRole="pundit"><PunditDashboard /></ProtectedRoute>} />
+            <Route path="/pundit/profile" element={<ProtectedRoute requiredRole="pundit"><PunditProfile /></ProtectedRoute>} />
+            <Route path="/pundit/create-slip" element={<ProtectedRoute requiredRole="pundit"><CreateSlip /></ProtectedRoute>} />
+            <Route path="/pundit/slips" element={<ProtectedRoute requiredRole="pundit"><ManageSlips /></ProtectedRoute>} />
+            <Route path="/pundit/analytics" element={<ProtectedRoute requiredRole="pundit"><PunditAnalytics /></ProtectedRoute>} />
+            <Route path="/pundit/sales" element={<ProtectedRoute requiredRole="pundit"><PunditSales /></ProtectedRoute>} />
+            <Route path="/pundit/withdrawals" element={<ProtectedRoute requiredRole="pundit"><PunditWithdrawals /></ProtectedRoute>} />
+            <Route path="/pundit/reviews" element={<ProtectedRoute requiredRole="pundit"><PunditReviews /></ProtectedRoute>} />
+            <Route path="/pundit/followers" element={<ProtectedRoute requiredRole="pundit"><PunditFollowers /></ProtectedRoute>} />
+            <Route path="/pundit/promotions" element={<ProtectedRoute requiredRole="pundit"><PunditPromotions /></ProtectedRoute>} />
+            <Route path="/pundit/settings" element={<ProtectedRoute requiredRole="pundit"><PunditSettings /></ProtectedRoute>} />
 
             <Route path="*" element={<NotFound />} />
           </Routes>

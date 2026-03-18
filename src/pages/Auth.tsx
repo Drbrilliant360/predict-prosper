@@ -17,7 +17,7 @@ const getRedirectPath = async (userId: string): Promise<string> => {
     .eq("user_id", userId);
   const roles = data?.map((r) => r.role) ?? [];
   if (roles.includes("admin")) return "/admin";
-  if (roles.includes("punter")) return "/punter";
+  if (roles.includes("pundit")) return "/pundit";
   return "/";
 };
 
