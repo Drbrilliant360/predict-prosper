@@ -91,7 +91,10 @@ const Auth = () => {
           _id_back_url: null,
           _selfie_url: null,
         });
-        if (kycError) console.error("KYC submission error:", kycError);
+        if (kycError) {
+          console.error("KYC submission error:", kycError);
+          toast({ title: "KYC Error", description: kycError.message, variant: "destructive" });
+        }
       }
 
       toast({
