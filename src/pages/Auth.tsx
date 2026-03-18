@@ -31,6 +31,7 @@ const Auth = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [registerAs, setRegisterAs] = useState<"customer" | "punter" | "">("");
 
   // KYC fields
   const [fullName, setFullName] = useState("");
