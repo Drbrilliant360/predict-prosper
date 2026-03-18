@@ -59,7 +59,7 @@ const PunditDashboard = () => {
         <div className="rounded-xl border border-border bg-card">
           <div className="border-b border-border px-4 py-3 flex items-center justify-between">
             <h2 className="text-sm font-semibold tracking-tight-custom text-foreground">Recent Sales</h2>
-            <Link to="/punter/sales" className="text-xs text-muted-foreground hover:text-foreground">Show more</Link>
+            <Link to="/pundit/sales" className="text-xs text-muted-foreground hover:text-foreground">Show more</Link>
           </div>
           <div className="divide-y divide-border/50">
             {recentSales.map((sale, i) => (
