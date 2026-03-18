@@ -5,3 +5,6 @@ verify_jwt = false
 
 [functions.sonic-pesa-webhook]
 verify_jwt = false
+
+[functions.create-punter]
+verify_jwt = false
