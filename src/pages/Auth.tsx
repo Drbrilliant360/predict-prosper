@@ -22,7 +22,7 @@ const getRedirectPath = async (userId: string): Promise<string> => {
   return "/";
 };
 
-const STEPS = ["Account", "Personal", "Identity", "Documents"];
+const STEPS = ["Role", "Account", "Personal", "Identity", "Documents"];
 
 const Auth = () => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -31,6 +31,7 @@ const Auth = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [registerAs, setRegisterAs] = useState<"customer" | "punter" | "">("");
 
   // KYC fields
   const [fullName, setFullName] = useState("");
@@ -135,9 +136,10 @@ const Auth = () => {
   };
 
   const canProceedStep = (s: number): boolean => {
-    if (s === 0) return email.length > 0 && password.length >= 6;
-    if (s === 1) return fullName.length > 0 && phone.length > 0 && dateOfBirth.length > 0;
-    if (s === 2) return idNumber.length > 0;
+    if (s === 0) return registerAs !== "";
+    if (s === 1) return email.length > 0 && password.length >= 6;
+    if (s === 2) return fullName.length > 0 && phone.length > 0 && dateOfBirth.length > 0;
+    if (s === 3) return idNumber.length > 0;
     return true;
   };
 
@@ -259,10 +261,46 @@ const Auth = () => {
         <div className="rounded-xl border border-border bg-card p-6">
           <h2 className="mb-4 text-sm font-semibold text-foreground">{STEPS[step]}</h2>
 
-          <form onSubmit={step === 3 ? handleSignUp : (e) => { e.preventDefault(); setStep(step + 1); }} className="space-y-4">
+          <form onSubmit={step === 4 ? handleSignUp : (e) => { e.preventDefault(); setStep(step + 1); }} className="space-y-4">
             <AnimatePresence mode="wait">
               <motion.div key={step} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.2 }} className="space-y-4">
                 {step === 0 && (
+                  <div className="space-y-3">
+                    <p className="text-xs text-muted-foreground">How would you like to use Kanji?</p>
+                    <button
+                      type="button"
+                      onClick={() => setRegisterAs("customer")}
+                      className={`w-full rounded-lg border-2 p-4 text-left transition-all ${registerAs === "customer" ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"}`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className={`flex h-10 w-10 items-center justify-center rounded-full ${registerAs === "customer" ? "bg-primary text-primary-foreground" : "bg-secondary text-muted-foreground"}`}>
+                          <User className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-foreground">Normal User</p>
+                          <p className="text-xs text-muted-foreground">Browse and buy betting slips from punters</p>
+                        </div>
+                      </div>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setRegisterAs("punter")}
+                      className={`w-full rounded-lg border-2 p-4 text-left transition-all ${registerAs === "punter" ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"}`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className={`flex h-10 w-10 items-center justify-center rounded-full ${registerAs === "punter" ? "bg-primary text-primary-foreground" : "bg-secondary text-muted-foreground"}`}>
+                          <CreditCard className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-foreground">Punter</p>
+                          <p className="text-xs text-muted-foreground">Create and sell betting slips to users</p>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                )}
+
+                {step === 1 && (
                   <>
                     <div>
                       <label className="text-xs font-medium text-muted-foreground">Email</label>
@@ -284,7 +322,7 @@ const Auth = () => {
                   </>
                 )}
 
-                {step === 1 && (
+                {step === 2 && (
                   <>
                     <div>
                       <label className="text-xs font-medium text-muted-foreground">Full Name</label>
@@ -310,7 +348,7 @@ const Auth = () => {
                   </>
                 )}
 
-                {step === 2 && (
+                {step === 3 && (
                   <>
                     <div>
                       <label className="text-xs font-medium text-muted-foreground">ID Type</label>
@@ -336,7 +374,7 @@ const Auth = () => {
                   </>
                 )}
 
-                {step === 3 && (
+                {step === 4 && (
                   <>
                     <p className="text-xs text-muted-foreground">Upload clear photos of your ID and a selfie for verification.</p>
                     <div className="grid grid-cols-2 gap-3">
@@ -355,7 +393,7 @@ const Auth = () => {
                   <ArrowLeft className="h-3.5 w-3.5" /> Back
                 </Button>
               )}
-              {step < 3 ? (
+              {step < 4 ? (
                 <Button type="submit" className="flex-1 gap-1 bg-primary text-primary-foreground" disabled={!canProceedStep(step)}>
                   Next <ArrowRight className="h-3.5 w-3.5" />
                 </Button>
