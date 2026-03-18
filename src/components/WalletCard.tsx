@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Wallet, Plus, ArrowDown, Phone, Loader2 } from "lucide-react";
+import { Wallet, Plus, Phone, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -62,7 +62,6 @@ const WalletCard = () => {
       setPhone("");
       setAmount("");
 
-      // Refresh wallet and transactions after a delay
       setTimeout(() => {
         queryClient.invalidateQueries({ queryKey: ["wallet", user?.id] });
         queryClient.invalidateQueries({ queryKey: ["transactions", user?.id] });
@@ -76,15 +75,12 @@ const WalletCard = () => {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-between rounded-xl border border-border bg-card p-5">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 rounded-xl border border-border bg-card p-4 sm:p-5">
         <div className="space-y-2">
           <Skeleton className="h-4 w-24" />
           <Skeleton className="h-8 w-40" />
         </div>
-        <div className="flex gap-3">
-          <Skeleton className="h-10 w-28" />
-          <Skeleton className="h-10 w-28" />
-        </div>
+        <Skeleton className="h-10 w-28" />
       </div>
     );
   }
@@ -97,7 +93,7 @@ const WalletCard = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="flex items-center justify-between rounded-xl border border-border bg-card p-5"
+        className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 rounded-xl border border-border bg-card p-4 sm:p-5"
       >
         <div>
           <div className="mb-1 flex items-center gap-2 text-muted-foreground">
@@ -106,23 +102,21 @@ const WalletCard = () => {
               Total Balance
             </span>
           </div>
-          <p className="font-mono text-3xl font-bold tracking-tight text-primary">
+          <p className="font-mono text-2xl sm:text-3xl font-bold tracking-tight text-primary">
             TSh {balance.toLocaleString()}
           </p>
         </div>
-        <div className="flex gap-3">
-          <Button
-            onClick={() => setDepositOpen(true)}
-            className="gap-1.5 bg-primary text-primary-foreground hover:bg-primary/90 font-bold uppercase tracking-wider tap-scale px-6"
-          >
-            <Plus className="h-4 w-4" />
-            Deposit
-          </Button>
-        </div>
+        <Button
+          onClick={() => setDepositOpen(true)}
+          className="w-full sm:w-auto gap-1.5 bg-primary text-primary-foreground hover:bg-primary/90 font-bold uppercase tracking-wider tap-scale px-6"
+        >
+          <Plus className="h-4 w-4" />
+          Deposit
+        </Button>
       </motion.div>
 
       <Dialog open={depositOpen} onOpenChange={setDepositOpen}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-md">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
               <Plus className="h-5 w-5 text-primary" />
@@ -163,7 +157,7 @@ const WalletCard = () => {
               />
               <p className="text-xs text-muted-foreground">Minimum: 500 TZS</p>
             </div>
-            <div className="flex gap-2 pt-2">
+            <div className="grid grid-cols-4 gap-2 pt-2">
               {[1000, 5000, 10000, 25000].map((preset) => (
                 <Button
                   key={preset}
@@ -171,9 +165,9 @@ const WalletCard = () => {
                   size="sm"
                   onClick={() => setAmount(String(preset))}
                   disabled={submitting}
-                  className="flex-1 text-xs"
+                  className="text-xs"
                 >
-                  {preset.toLocaleString()}
+                  {preset >= 1000 ? `${preset / 1000}K` : preset}
                 </Button>
               ))}
             </div>

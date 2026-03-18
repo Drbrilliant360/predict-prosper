@@ -12,14 +12,12 @@ const Index = () => {
   const { data: purchases, isLoading: loadingPurchases } = useMyPurchases();
   const { data: slips, isLoading: loadingSlips } = useSlips();
 
-  // Show purchased slips on dashboard
   const purchasedSlips: SlipData[] = (purchases ?? []).map((p: any) => ({
     ...p.slips,
     pundit_name: p.slips?.profiles?.display_name ?? "Unknown",
     purchased: true,
   }));
 
-  // Show trending slips (latest available)
   const trendingSlips: SlipData[] = (slips ?? []).slice(0, 6).map((s: any) => ({
     ...s,
     pundit_name: s.profiles?.display_name ?? "Unknown",
@@ -51,7 +49,7 @@ const Index = () => {
             </div>
 
             {isLoading ? (
-              <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
                 {Array.from({ length: 3 }).map((_, i) => (
                   <Skeleton key={i} className="h-48 rounded-xl" />
                 ))}
@@ -61,7 +59,7 @@ const Index = () => {
                 No slips available yet. Browse punters to find predictions!
               </p>
             ) : (
-              <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
                 {displaySlips.map((slip, i) => (
                   <SlipCard key={slip.id} slip={slip} index={i} />
                 ))}
@@ -70,7 +68,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div>
+        <div className="lg:block">
           <FavoritePundits />
         </div>
       </div>

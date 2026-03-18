@@ -33,7 +33,22 @@ export type Database = {
           id?: string
           pundit_id?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "followers_follower_id_profiles_fkey"
+            columns: ["follower_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+          {
+            foreignKeyName: "followers_pundit_id_profiles_fkey"
+            columns: ["pundit_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+        ]
       }
       kyc_submissions: {
         Row: {
@@ -204,7 +219,15 @@ export type Database = {
           win_rate?: number | null
           wins?: number | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "pundit_profiles_user_id_profiles_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+        ]
       }
       purchases: {
         Row: {
@@ -329,7 +352,15 @@ export type Database = {
           title?: string
           updated_at?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "slips_pundit_id_profiles_fkey"
+            columns: ["pundit_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+        ]
       }
       transactions: {
         Row: {

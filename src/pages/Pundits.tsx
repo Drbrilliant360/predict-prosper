@@ -15,13 +15,13 @@ const Punters = () => {
           <Users2 className="h-4.5 w-4.5 text-primary" />
         </div>
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-foreground">Punters</h1>
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">Punters</h1>
           <p className="text-xs text-muted-foreground">Browse top prediction experts</p>
         </div>
       </div>
 
       {isLoading ? (
-        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
           {Array.from({ length: 6 }).map((_, i) => (
             <Skeleton key={i} className="h-56 rounded-xl" />
           ))}
@@ -31,7 +31,7 @@ const Punters = () => {
           No punters available yet. Check back soon!
         </p>
       ) : (
-        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3 mb-8">
+        <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 mb-8">
           {(punters ?? []).map((punter, i) => {
             const profile = (punter as any).profiles;
             const name = profile?.display_name ?? "Unknown";
@@ -47,10 +47,10 @@ const Punters = () => {
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
                     {name.charAt(0)}
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-1.5">
-                      <span className="font-semibold text-foreground text-sm">{name}</span>
-                      {punter.verified && <Shield className="h-3.5 w-3.5 text-primary" />}
+                      <span className="font-semibold text-foreground text-sm truncate">{name}</span>
+                      {punter.verified && <Shield className="h-3.5 w-3.5 flex-shrink-0 text-primary" />}
                     </div>
                     <div className="flex items-center gap-1 text-xs text-muted-foreground">
                       <Sparkles className="h-3 w-3" />
