@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Shield, MoreHorizontal, Search } from "lucide-react";
 
-const pundits = [
+const punters = [
   { id: "P001", name: "Bongo Tips", sport: "Football", winRate: 72, roi: 14.2, slips: 482, status: "verified", earnings: "TSh 42,400,000", kyc: "approved" },
   { id: "P002", name: "Kimaro Bets", sport: "Basketball", winRate: 68, roi: 11.8, slips: 310, status: "verified", earnings: "TSh 22,650,000", kyc: "approved" },
   { id: "P003", name: "Msimbazi Edge", sport: "Tennis", winRate: 65, roi: 9.4, slips: 198, status: "verified", earnings: "TSh 12,240,000", kyc: "approved" },
@@ -18,17 +18,17 @@ const statusStyles: Record<string, string> = {
   suspended: "bg-loss/15 text-loss border-loss/20",
 };
 
-const AdminPundits = () => {
+const AdminPunters = () => {
   return (
     <AdminLayout>
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight-custom text-foreground">Pundits</h1>
-          <p className="mt-1 text-sm text-muted-foreground">Manage pundit accounts and verification.</p>
+          <h1 className="text-2xl font-bold tracking-tight-custom text-foreground">Punters</h1>
+          <p className="mt-1 text-sm text-muted-foreground">Manage punter accounts and verification.</p>
         </div>
         <div className="flex h-9 items-center gap-2 rounded-lg border border-border bg-secondary/50 px-3">
           <Search className="h-3.5 w-3.5 text-muted-foreground" />
-          <input type="text" placeholder="Search pundits..." className="w-48 bg-transparent text-sm text-foreground placeholder:text-muted-foreground outline-none" />
+          <input type="text" placeholder="Search punters..." className="w-48 bg-transparent text-sm text-foreground placeholder:text-muted-foreground outline-none" />
         </div>
       </div>
 
@@ -48,7 +48,7 @@ const AdminPundits = () => {
             </tr>
           </thead>
           <tbody>
-            {pundits.map((p, i) => (
+            {punters.map((p, i) => (
               <motion.tr
                 key={p.id}
                 initial={{ opacity: 0 }}

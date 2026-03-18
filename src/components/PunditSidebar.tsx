@@ -17,17 +17,17 @@ import {
 import kanjiLogo from "@/assets/kanji-logo.png";
 
 const navItems = [
-  { icon: Home, label: "Home", path: "/pundit" },
-  { icon: User, label: "Profile", path: "/pundit/profile" },
-  { icon: FilePlus, label: "Create Slip", path: "/pundit/create-slip" },
-  { icon: FileText, label: "Manage Slips", path: "/pundit/slips" },
-  { icon: BarChart3, label: "Analytics", path: "/pundit/analytics" },
-  { icon: DollarSign, label: "Sales & Revenue", path: "/pundit/sales" },
-  { icon: Banknote, label: "Withdrawals", path: "/pundit/withdrawals" },
-  { icon: Star, label: "Reviews", path: "/pundit/reviews" },
-  { icon: Users, label: "Followers", path: "/pundit/followers" },
-  { icon: Megaphone, label: "Promotions", path: "/pundit/promotions" },
-  { icon: Settings, label: "Settings", path: "/pundit/settings" },
+  { icon: Home, label: "Home", path: "/punter" },
+  { icon: User, label: "Profile", path: "/punter/profile" },
+  { icon: FilePlus, label: "Create Slip", path: "/punter/create-slip" },
+  { icon: FileText, label: "Manage Slips", path: "/punter/slips" },
+  { icon: BarChart3, label: "Analytics", path: "/punter/analytics" },
+  { icon: DollarSign, label: "Sales & Revenue", path: "/punter/sales" },
+  { icon: Banknote, label: "Withdrawals", path: "/punter/withdrawals" },
+  { icon: Star, label: "Reviews", path: "/punter/reviews" },
+  { icon: Users, label: "Followers", path: "/punter/followers" },
+  { icon: Megaphone, label: "Promotions", path: "/punter/promotions" },
+  { icon: Settings, label: "Settings", path: "/punter/settings" },
 ];
 
 const PunditSidebarContent = ({ onNavigate }: { onNavigate?: () => void }) => {
@@ -62,7 +62,7 @@ const PunditSidebarContent = ({ onNavigate }: { onNavigate?: () => void }) => {
             >
               {isActive && (
                 <motion.div
-                  layoutId="pundit-sidebar-active"
+                  layoutId="punter-sidebar-active"
                   className="absolute inset-0 rounded-lg bg-sidebar-accent"
                   transition={{ type: "spring", stiffness: 500, damping: 35 }}
                 />

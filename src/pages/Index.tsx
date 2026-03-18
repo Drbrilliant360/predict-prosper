@@ -1,6 +1,6 @@
 import AppLayout from "@/components/AppLayout";
 import WalletCard from "@/components/WalletCard";
-import FavoritePundits from "@/components/FavoritePundits";
+import FavoritePunters from "@/components/FavoritePundits";
 import SlipCard from "@/components/SlipCard";
 import type { SlipData } from "@/components/SlipCard";
 import { useMyPurchases, useSlips } from "@/hooks/use-supabase-data";
@@ -58,7 +58,7 @@ const Index = () => {
               </div>
             ) : displaySlips.length === 0 ? (
               <p className="text-sm text-muted-foreground py-8 text-center">
-                No slips available yet. Browse pundits to find predictions!
+                No slips available yet. Browse punters to find predictions!
               </p>
             ) : (
               <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">

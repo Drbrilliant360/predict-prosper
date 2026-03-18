@@ -10,9 +10,9 @@ const rankIcons = [
 ];
 
 const LeaderboardTable = () => {
-  const { data: pundits, isLoading } = usePunditProfiles();
+  const { data: punters, isLoading } = usePunditProfiles();
 
-  const sorted = [...(pundits ?? [])].sort((a, b) => (b.roi ?? 0) - (a.roi ?? 0));
+  const sorted = [...(punters ?? [])].sort((a, b) => (b.roi ?? 0) - (a.roi ?? 0));
 
   return (
     <div className="rounded-xl border border-border bg-card">
@@ -31,7 +31,7 @@ const LeaderboardTable = () => {
           ))}
         </div>
       ) : sorted.length === 0 ? (
-        <p className="px-4 py-8 text-center text-sm text-muted-foreground">No pundits on the leaderboard yet</p>
+        <p className="px-4 py-8 text-center text-sm text-muted-foreground">No punters on the leaderboard yet</p>
       ) : (
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
@@ -46,14 +46,14 @@ const LeaderboardTable = () => {
               </tr>
             </thead>
             <tbody>
-              {sorted.map((pundit, i) => {
+              {sorted.map((punter, i) => {
                 const RankIcon = rankIcons[i]?.icon;
                 const rankColor = rankIcons[i]?.color;
                 const profile = pundit.profiles as any;
                 const name = profile?.display_name ?? "Unknown";
                 return (
                   <motion.tr
-                    key={pundit.id}
+                    key={punter.id}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.05, duration: 0.3 }}
@@ -74,22 +74,22 @@ const LeaderboardTable = () => {
                         <div>
                           <div className="flex items-center gap-1.5">
                             <span className="font-medium text-foreground">{name}</span>
-                            {pundit.verified && (
+                            {punter.verified && (
                               <Shield className="h-3.5 w-3.5 text-primary" />
                             )}
                           </div>
-                          <span className="text-xs text-muted-foreground">{pundit.sport}</span>
+                          <span className="text-xs text-muted-foreground">{punter.sport}</span>
                         </div>
                       </div>
                     </td>
                     <td className="px-4 py-3 text-right font-mono text-sm text-foreground">
-                      {pundit.win_rate ?? 0}%
+                      {punter.win_rate ?? 0}%
                     </td>
                     <td className="px-4 py-3 text-right font-mono text-sm font-medium text-win">
-                      +{pundit.roi ?? 0}%
+                      +{punter.roi ?? 0}%
                     </td>
                     <td className="px-4 py-3 text-right font-mono text-sm text-muted-foreground">
-                      {pundit.total_slips ?? 0}
+                      {punter.total_slips ?? 0}
                     </td>
                     <td className="px-4 py-3 text-right">
                       <ChevronRight className="h-4 w-4 text-muted-foreground" />

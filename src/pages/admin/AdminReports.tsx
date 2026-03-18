@@ -9,7 +9,7 @@ const metrics = [
   { label: "Avg Revenue/User", value: "TSh 67,900", change: "+5.8% vs last month", icon: Activity },
 ];
 
-const topPundits = [
+const topPunters = [
   { name: "Bongo Tips", revenue: "TSh 42.4M", slipsSold: 1240, winRate: 72 },
   { name: "Daktari wa Odds", revenue: "TSh 32.4M", slipsSold: 980, winRate: 70 },
   { name: "Kimaro Bets", revenue: "TSh 22.7M", slipsSold: 642, winRate: 68 },
@@ -79,10 +79,10 @@ const AdminReports = () => {
 
         <div className="rounded-xl border border-border bg-card">
           <div className="border-b border-border px-4 py-3">
-            <h2 className="text-sm font-semibold tracking-tight-custom text-foreground">Top Earning Pundits</h2>
+            <h2 className="text-sm font-semibold tracking-tight-custom text-foreground">Top Earning Punters</h2>
           </div>
           <div className="divide-y divide-border/50">
-            {topPundits.map((p, i) => (
+            {topPunters.map((p, i) => (
               <div key={p.name} className="flex items-center justify-between px-4 py-3">
                 <div className="flex items-center gap-3">
                   <span className="font-mono text-xs text-muted-foreground w-4">{i + 1}</span>

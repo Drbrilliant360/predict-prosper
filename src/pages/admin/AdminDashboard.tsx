@@ -13,7 +13,7 @@ import {
 
 const stats = [
   { label: "Total Users", value: "12,482", icon: Users, change: "+124 this week", changeColor: "text-primary" },
-  { label: "Active Pundits", value: "348", icon: UserCheck, change: "+12 pending", changeColor: "text-pending" },
+  { label: "Active Punters", value: "348", icon: UserCheck, change: "+12 pending", changeColor: "text-pending" },
   { label: "Total Slips", value: "8,921", icon: FileText, change: "342 today", changeColor: "text-primary" },
   { label: "Revenue (MTD)", value: "TSh 110M", icon: DollarSign, change: "+18.4%", changeColor: "text-primary" },
   { label: "Open Disputes", value: "23", icon: AlertTriangle, change: "5 urgent", changeColor: "text-pending" },
@@ -23,7 +23,7 @@ const stats = [
 ];
 
 const recentActivity = [
-  { time: "2 min ago", action: "New pundit registration", detail: "Juma Predictions submitted KYC", type: "info" },
+  { time: "2 min ago", action: "New punter registration", detail: "Juma Predictions submitted KYC", type: "info" },
   { time: "5 min ago", action: "Dispute opened", detail: "User Baraka disputed slip #S006", type: "warning" },
   { time: "12 min ago", action: "Payout processed", detail: "TSh 4,574,700 to Bongo Tips via M-Pesa", type: "success" },
   { time: "18 min ago", action: "Slip flagged", detail: "Automated fraud check on slip #S006", type: "warning" },

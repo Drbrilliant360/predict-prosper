@@ -38,7 +38,7 @@ const MySlips = () => {
         </div>
       ) : allSlips.length === 0 ? (
         <p className="text-sm text-muted-foreground py-12 text-center">
-          You haven't purchased any slips yet. Browse pundits to find predictions!
+          You haven't purchased any slips yet. Browse punters to find predictions!
         </p>
       ) : (
         <Tabs defaultValue="active" className="w-full">

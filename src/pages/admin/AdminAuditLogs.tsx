@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ScrollText } from "lucide-react";
 
 const logs = [
-  { id: "LOG001", actor: "Admin (root)", action: "Approved pundit", target: "Kimaro Bets (P002)", ip: "192.168.1.1", timestamp: "2026-03-17 14:30:22" },
+  { id: "LOG001", actor: "Admin (root)", action: "Approved punter", target: "Kimaro Bets (P002)", ip: "192.168.1.1", timestamp: "2026-03-17 14:30:22" },
   { id: "LOG002", actor: "Admin (root)", action: "Processed payout", target: "PO001 - TSh 4,574,700", ip: "192.168.1.1", timestamp: "2026-03-17 14:28:15" },
   { id: "LOG003", actor: "System", action: "Auto-flagged slip", target: "S006 - Fraud check", ip: "—", timestamp: "2026-03-17 14:15:00" },
   { id: "LOG004", actor: "Admin (root)", action: "Suspended user", target: "Baraka Shao (U003)", ip: "192.168.1.1", timestamp: "2026-03-17 13:45:10" },

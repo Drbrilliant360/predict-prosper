@@ -23,7 +23,7 @@ const Profile = () => {
 
   const purchaseHistory = (purchases ?? []).map((p: any) => ({
     id: p.id,
-    pundit: p.slips?.profiles?.display_name ?? "Unknown",
+    punter: p.slips?.profiles?.display_name ?? "Unknown",
     title: p.slips?.match_name ?? p.slips?.title ?? "Unknown",
     price: p.amount,
     odds: p.slips?.odds ?? 0,
@@ -185,7 +185,7 @@ const Profile = () => {
                         return (
                           <tr key={p.id} className="hover:bg-muted/30 transition-colors">
                             <td className="px-4 py-3 font-medium text-foreground">{p.title}</td>
-                            <td className="px-4 py-3 text-muted-foreground">{p.pundit}</td>
+                            <td className="px-4 py-3 text-muted-foreground">{p.punter}</td>
                             <td className="px-4 py-3 text-right font-mono text-foreground">{p.odds}</td>
                             <td className="px-4 py-3 text-right font-mono text-foreground">TSh {p.price.toLocaleString()}</td>
                             <td className="px-4 py-3 text-center">
@@ -217,7 +217,7 @@ const Profile = () => {
                           </span>
                         </div>
                         <div className="flex items-center justify-between text-xs text-muted-foreground">
-                          <span>{p.pundit} · {p.odds}</span>
+                          <span>{p.punter} · {p.odds}</span>
                           <span className="font-mono">TSh {p.price.toLocaleString()}</span>
                         </div>
                         <p className="text-[11px] text-muted-foreground/70">{p.date}</p>

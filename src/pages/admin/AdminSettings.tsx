@@ -6,7 +6,7 @@ const sections = [
   {
     title: "Platform Fees",
     items: [
-      { label: "Commission Rate", value: "15%", desc: "Applied to all pundit earnings" },
+      { label: "Commission Rate", value: "15%", desc: "Applied to all punter earnings" },
       { label: "Payment Processing Fee", value: "2.9% + TSh 700", desc: "Per transaction" },
       { label: "Withdrawal Fee", value: "TSh 3,500", desc: "Per payout request" },
     ],
@@ -14,7 +14,7 @@ const sections = [
   {
     title: "Slip Configuration",
     items: [
-      { label: "Min Slip Price", value: "TSh 1,000", desc: "Minimum price pundits can set" },
+      { label: "Min Slip Price", value: "TSh 1,000", desc: "Minimum price punters can set" },
       { label: "Max Slip Price", value: "TSh 50,000", desc: "Maximum price per slip" },
       { label: "Default Expiry", value: "24 hours", desc: "Auto-expire after posting" },
     ],
@@ -23,7 +23,7 @@ const sections = [
     title: "Moderation",
     items: [
       { label: "Auto-Flag Threshold", value: "3 reports", desc: "Slips auto-flagged after N reports" },
-      { label: "KYC Required", value: "Yes", desc: "For all pundit accounts" },
+      { label: "KYC Required", value: "Yes", desc: "For all punter accounts" },
       { label: "Content Review", value: "Manual", desc: "First 5 slips require admin approval" },
     ],
   },

@@ -7,11 +7,11 @@ import { MessageSquare, Phone, Mail, FileQuestion, ChevronDown } from "lucide-re
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
-  { q: "How do I purchase a slip?", a: "Browse pundits, select a slip, and pay via M-Pesa, Tigo Pesa, or your wallet balance. Once paid, the prediction is unlocked." },
+  { q: "How do I purchase a slip?", a: "Browse punters, select a slip, and pay via M-Pesa, Tigo Pesa, or your wallet balance. Once paid, the prediction is unlocked." },
   { q: "What happens if a match is cancelled?", a: "If a match is cancelled or postponed, the slip is marked as 'void' and your payment is refunded to your wallet within 24 hours." },
   { q: "How do I withdraw from my wallet?", a: "Go to Wallet → Withdraw, choose M-Pesa or Tigo Pesa, enter the amount (minimum TSh 5,000), and confirm. Payouts process within 1-2 hours." },
-  { q: "Can I get a refund on a losing slip?", a: "No, slips are predictions and not guaranteed. However, if a pundit violates platform rules, you can file a dispute." },
-  { q: "How do I become a pundit?", a: "Apply through the Pundit Registration form. You'll need to verify your identity (KYC) and demonstrate betting knowledge. Approval takes 2-5 business days." },
+  { q: "Can I get a refund on a losing slip?", a: "No, slips are predictions and not guaranteed. However, if a punter violates platform rules, you can file a dispute." },
+  { q: "How do I become a punter?", a: "Apply through the Pundit Registration form. You'll need to verify your identity (KYC) and demonstrate betting knowledge. Approval takes 2-5 business days." },
 ];
 
 const Support = () => {

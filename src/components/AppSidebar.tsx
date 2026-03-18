@@ -14,7 +14,7 @@ import kanjiLogo from "@/assets/kanji-logo.png";
 const navItems = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/" },
   { icon: FileText, label: "My Slips", path: "/slips" },
-  { icon: Users, label: "Pundits", path: "/pundits" },
+  { icon: Users, label: "Punters", path: "/punters" },
   { icon: TrendingUp, label: "Leaderboard", path: "/leaderboard" },
   { icon: Wallet, label: "Wallet", path: "/wallet" },
   { icon: Settings, label: "Settings", path: "/settings" },

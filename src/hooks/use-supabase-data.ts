@@ -81,10 +81,10 @@ export const useMyPurchases = () => {
   });
 };
 
-export const useFollowedPundits = () => {
+export const useFollowedPunters = () => {
   const { user } = useAuth();
   return useQuery({
-    queryKey: ["followed_pundits", user?.id],
+    queryKey: ["followed_punters", user?.id],
     enabled: !!user,
     queryFn: async () => {
       const { data, error } = await supabase
