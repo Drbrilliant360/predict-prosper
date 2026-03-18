@@ -109,7 +109,7 @@ const CreateSlip = () => {
 
       if (error) throw error;
       toast.success(isDraft ? "Draft saved!" : "Slip published!");
-      navigate("/punter/slips");
+      navigate("/pundit/slips");
     } catch (err: any) {
       toast.error(err.message || "Failed to create slip");
     } finally {
