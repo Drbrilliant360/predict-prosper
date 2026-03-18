@@ -322,7 +322,7 @@ const Auth = () => {
                   </>
                 )}
 
-                {step === 1 && (
+                {step === 2 && (
                   <>
                     <div>
                       <label className="text-xs font-medium text-muted-foreground">Full Name</label>
@@ -348,7 +348,7 @@ const Auth = () => {
                   </>
                 )}
 
-                {step === 2 && (
+                {step === 3 && (
                   <>
                     <div>
                       <label className="text-xs font-medium text-muted-foreground">ID Type</label>
@@ -374,7 +374,7 @@ const Auth = () => {
                   </>
                 )}
 
-                {step === 3 && (
+                {step === 4 && (
                   <>
                     <p className="text-xs text-muted-foreground">Upload clear photos of your ID and a selfie for verification.</p>
                     <div className="grid grid-cols-2 gap-3">
@@ -393,7 +393,7 @@ const Auth = () => {
                   <ArrowLeft className="h-3.5 w-3.5" /> Back
                 </Button>
               )}
-              {step < 3 ? (
+              {step < 4 ? (
                 <Button type="submit" className="flex-1 gap-1 bg-primary text-primary-foreground" disabled={!canProceedStep(step)}>
                   Next <ArrowRight className="h-3.5 w-3.5" />
                 </Button>
