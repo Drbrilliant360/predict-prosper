@@ -1,6 +1,6 @@
 import AppLayout from "@/components/AppLayout";
 import WalletCard from "@/components/WalletCard";
-import FavoritePunters from "@/components/FavoritePundits";
+import FavoritePundits from "@/components/FavoritePundits";
 import SlipCard from "@/components/SlipCard";
 import type { SlipData } from "@/components/SlipCard";
 import { useMyPurchases, useSlips } from "@/hooks/use-supabase-data";
