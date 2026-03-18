@@ -261,7 +261,7 @@ const Auth = () => {
         <div className="rounded-xl border border-border bg-card p-6">
           <h2 className="mb-4 text-sm font-semibold text-foreground">{STEPS[step]}</h2>
 
-          <form onSubmit={step === 3 ? handleSignUp : (e) => { e.preventDefault(); setStep(step + 1); }} className="space-y-4">
+          <form onSubmit={step === 4 ? handleSignUp : (e) => { e.preventDefault(); setStep(step + 1); }} className="space-y-4">
             <AnimatePresence mode="wait">
               <motion.div key={step} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.2 }} className="space-y-4">
                 {step === 0 && (
