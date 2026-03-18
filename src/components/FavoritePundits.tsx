@@ -3,10 +3,10 @@ import { Shield, Star, Heart } from "lucide-react";
 import { usePunditProfiles } from "@/hooks/use-supabase-data";
 import { Skeleton } from "@/components/ui/skeleton";
 
-const FavoritePunters = () => {
+const FavoritePundits = () => {
   const { data: punters, isLoading } = usePunditProfiles();
 
-  const topPundits = (punters ?? []).slice(0, 5);
+  const topPunters = (punters ?? []).slice(0, 5);
 
   return (
     <motion.div
@@ -37,7 +37,7 @@ const FavoritePunters = () => {
           <p className="px-4 py-6 text-center text-sm text-muted-foreground">No punters yet</p>
         ) : (
           topPunters.map((punter) => {
-            const profile = pundit.profiles as any;
+            const profile = (punter as any).profiles;
             const name = profile?.display_name ?? "Unknown";
             return (
               <div
@@ -61,7 +61,7 @@ const FavoritePunters = () => {
                 <div className="flex items-center gap-1.5">
                   <Star className="h-3 w-3 text-yellow-500 fill-yellow-500" />
                   <span className="rounded-md bg-win/15 px-2 py-0.5 font-mono text-[11px] font-semibold text-win">
-                    {pundit.win_rate ?? 0}%
+                    {punter.win_rate ?? 0}%
                   </span>
                 </div>
               </div>

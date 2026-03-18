@@ -33,7 +33,7 @@ const Punters = () => {
       ) : (
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3 mb-8">
           {(punters ?? []).map((punter, i) => {
-            const profile = pundit.profiles as any;
+            const profile = (punter as any).profiles;
             const name = profile?.display_name ?? "Unknown";
             return (
               <motion.div
@@ -100,4 +100,4 @@ const Punters = () => {
   );
 };
 
-export default Pundits;
+export default Punters;

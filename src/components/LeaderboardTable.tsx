@@ -49,7 +49,7 @@ const LeaderboardTable = () => {
               {sorted.map((punter, i) => {
                 const RankIcon = rankIcons[i]?.icon;
                 const rankColor = rankIcons[i]?.color;
-                const profile = pundit.profiles as any;
+                const profile = (punter as any).profiles;
                 const name = profile?.display_name ?? "Unknown";
                 return (
                   <motion.tr
