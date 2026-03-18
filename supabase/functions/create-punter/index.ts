@@ -52,15 +52,10 @@ Deno.serve(async (req) => {
     const { display_name, email, password, sport } = await req.json();
     if (!display_name || !email || !password) {
       return new Response(JSON.stringify({ error: "display_name, email, and password are required" }), {
-        status: 400,
+        status: 200,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
-
-    // Admin client with service role to create users
-    const adminClient = createClient(supabaseUrl, serviceRoleKey, {
-      auth: { autoRefreshToken: false, persistSession: false },
-    });
 
     // Create user with auto-confirm
     const { data: newUser, error: createError } = await adminClient.auth.admin.createUser({
