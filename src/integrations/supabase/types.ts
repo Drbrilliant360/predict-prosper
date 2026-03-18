@@ -213,6 +213,8 @@ export type Database = {
       }
       slips: {
         Row: {
+          betslip_code: string | null
+          betslip_image_url: string | null
           bookmaker: string
           confidence: Database["public"]["Enums"]["slip_confidence"]
           created_at: string
@@ -232,6 +234,8 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          betslip_code?: string | null
+          betslip_image_url?: string | null
           bookmaker?: string
           confidence?: Database["public"]["Enums"]["slip_confidence"]
           created_at?: string
@@ -251,6 +255,8 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          betslip_code?: string | null
+          betslip_image_url?: string | null
           bookmaker?: string
           confidence?: Database["public"]["Enums"]["slip_confidence"]
           created_at?: string
