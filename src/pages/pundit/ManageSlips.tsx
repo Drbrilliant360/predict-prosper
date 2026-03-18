@@ -25,7 +25,7 @@ const ManageSlips = () => {
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-2xl font-bold tracking-tight-custom text-foreground">Manage Slips</h1>
         <Button className="bg-primary text-primary-foreground hover:bg-primary/90 tap-scale" asChild>
-          <a href="/punter/create-slip">+ New Slip</a>
+          <a href="/pundit/create-slip">+ New Slip</a>
         </Button>
       </div>
 
