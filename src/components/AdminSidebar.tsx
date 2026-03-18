@@ -20,6 +20,7 @@ import kanjiLogo from "@/assets/kanji-logo.png";
 const navItems = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/admin" },
   { icon: Users, label: "Users", path: "/admin/users" },
+  { icon: ShieldCheck, label: "KYC Verification", path: "/admin/kyc" },
   { icon: UserCheck, label: "Punters", path: "/admin/punters" },
   { icon: FileText, label: "Slips", path: "/admin/slips" },
   { icon: CreditCard, label: "Payments", path: "/admin/payments" },
