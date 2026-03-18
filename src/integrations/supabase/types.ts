@@ -35,6 +35,60 @@ export type Database = {
         }
         Relationships: []
       }
+      kyc_submissions: {
+        Row: {
+          created_at: string
+          date_of_birth: string
+          full_name: string
+          id: string
+          id_back_url: string | null
+          id_front_url: string | null
+          id_number: string
+          id_type: string
+          phone: string
+          rejection_reason: string | null
+          reviewed_by: string | null
+          selfie_url: string | null
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          date_of_birth: string
+          full_name: string
+          id?: string
+          id_back_url?: string | null
+          id_front_url?: string | null
+          id_number: string
+          id_type?: string
+          phone: string
+          rejection_reason?: string | null
+          reviewed_by?: string | null
+          selfie_url?: string | null
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          date_of_birth?: string
+          full_name?: string
+          id?: string
+          id_back_url?: string | null
+          id_front_url?: string | null
+          id_number?: string
+          id_type?: string
+          phone?: string
+          rejection_reason?: string | null
+          reviewed_by?: string | null
+          selfie_url?: string | null
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null

@@ -21,6 +21,7 @@ import AdminReports from "./pages/admin/AdminReports";
 import AdminSettings from "./pages/admin/AdminSettings";
 import AdminAds from "./pages/admin/AdminAds";
 import AdminAuditLogs from "./pages/admin/AdminAuditLogs";
+import AdminKYC from "./pages/admin/AdminKYC";
 import PunditDashboard from "./pages/pundit/PunditDashboard";
 import PunditProfile from "./pages/pundit/PunditProfile";
 import CreateSlip from "./pages/pundit/CreateSlip";
@@ -63,6 +64,7 @@ const App = () => (
             {/* Admin routes - protected */}
             <Route path="/admin" element={<ProtectedRoute requiredRole="admin"><AdminDashboard /></ProtectedRoute>} />
             <Route path="/admin/users" element={<ProtectedRoute requiredRole="admin"><AdminUsers /></ProtectedRoute>} />
+            <Route path="/admin/kyc" element={<ProtectedRoute requiredRole="admin"><AdminKYC /></ProtectedRoute>} />
             <Route path="/admin/punters" element={<ProtectedRoute requiredRole="admin"><AdminPunters /></ProtectedRoute>} />
             <Route path="/admin/slips" element={<ProtectedRoute requiredRole="admin"><AdminSlips /></ProtectedRoute>} />
             <Route path="/admin/payments" element={<ProtectedRoute requiredRole="admin"><AdminPayments /></ProtectedRoute>} />
