@@ -79,33 +79,19 @@ const Auth = () => {
       const userId = authData.user?.id;
       if (userId) {
         // Upload documents
-        let idFrontUrl: string | null = null;
-        let idBackUrl: string | null = null;
-        let selfieUrl: string | null = null;
-
-        if (idFront) idFrontUrl = await uploadFile(idFront, userId, "id-front");
-        if (idBack) idBackUrl = await uploadFile(idBack, userId, "id-back");
-        if (selfie) selfieUrl = await uploadFile(selfie, userId, "selfie");
-
-        // Submit KYC
-        const { error: kycError } = await supabase.from("kyc_submissions").insert({
-          user_id: userId,
-          full_name: fullName,
-          phone,
-          date_of_birth: dateOfBirth,
-          id_type: idType,
-          id_number: idNumber,
-          id_front_url: idFrontUrl,
-          id_back_url: idBackUrl,
-          selfie_url: selfieUrl,
+        // Submit KYC via secure RPC (no active session yet)
+        const { error: kycError } = await supabase.rpc("submit_kyc", {
+          _user_id: userId,
+          _full_name: fullName,
+          _phone: phone,
+          _date_of_birth: dateOfBirth,
+          _id_type: idType,
+          _id_number: idNumber,
+          _id_front_url: null,
+          _id_back_url: null,
+          _selfie_url: null,
         });
         if (kycError) console.error("KYC submission error:", kycError);
-
-        // Update profile with name and phone
-        await supabase
-          .from("profiles")
-          .update({ display_name: fullName, phone })
-          .eq("user_id", userId);
       }
 
       toast({
