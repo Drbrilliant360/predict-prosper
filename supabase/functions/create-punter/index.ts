@@ -24,25 +24,26 @@ Deno.serve(async (req) => {
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
     const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 
-    // Client with caller's token to check admin role
-    const callerClient = createClient(supabaseUrl, Deno.env.get("SUPABASE_ANON_KEY")!, {
-      global: { headers: { Authorization: authHeader } },
+    const adminClient = createClient(supabaseUrl, serviceRoleKey, {
+      auth: { autoRefreshToken: false, persistSession: false },
     });
 
-    const { data: { user: callerUser }, error: callerError } = await callerClient.auth.getUser();
+    // Verify caller identity using their token
+    const token = authHeader.replace("Bearer ", "");
+    const { data: { user: callerUser }, error: callerError } = await adminClient.auth.getUser(token);
     if (callerError || !callerUser) {
       return new Response(JSON.stringify({ error: "Unauthorized" }), {
-        status: 401,
+        status: 200,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 
-    // Check admin role
-    const { data: roles } = await callerClient.from("user_roles").select("role").eq("user_id", callerUser.id);
-    const isAdmin = roles?.some((r) => r.role === "admin");
+    // Check admin role using service role (bypasses RLS)
+    const { data: roles } = await adminClient.from("user_roles").select("role").eq("user_id", callerUser.id);
+    const isAdmin = roles?.some((r: any) => r.role === "admin");
     if (!isAdmin) {
       return new Response(JSON.stringify({ error: "Admin access required" }), {
-        status: 403,
+        status: 200,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
