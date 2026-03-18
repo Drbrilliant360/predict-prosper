@@ -265,6 +265,42 @@ const Auth = () => {
             <AnimatePresence mode="wait">
               <motion.div key={step} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.2 }} className="space-y-4">
                 {step === 0 && (
+                  <div className="space-y-3">
+                    <p className="text-xs text-muted-foreground">How would you like to use Kanji?</p>
+                    <button
+                      type="button"
+                      onClick={() => setRegisterAs("customer")}
+                      className={`w-full rounded-lg border-2 p-4 text-left transition-all ${registerAs === "customer" ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"}`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className={`flex h-10 w-10 items-center justify-center rounded-full ${registerAs === "customer" ? "bg-primary text-primary-foreground" : "bg-secondary text-muted-foreground"}`}>
+                          <User className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-foreground">Normal User</p>
+                          <p className="text-xs text-muted-foreground">Browse and buy betting slips from punters</p>
+                        </div>
+                      </div>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setRegisterAs("punter")}
+                      className={`w-full rounded-lg border-2 p-4 text-left transition-all ${registerAs === "punter" ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"}`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className={`flex h-10 w-10 items-center justify-center rounded-full ${registerAs === "punter" ? "bg-primary text-primary-foreground" : "bg-secondary text-muted-foreground"}`}>
+                          <CreditCard className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-foreground">Punter</p>
+                          <p className="text-xs text-muted-foreground">Create and sell betting slips to users</p>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                )}
+
+                {step === 1 && (
                   <>
                     <div>
                       <label className="text-xs font-medium text-muted-foreground">Email</label>
