@@ -421,6 +421,20 @@ export type Database = {
         }
         Returns: boolean
       }
+      submit_kyc: {
+        Args: {
+          _date_of_birth: string
+          _full_name: string
+          _id_back_url?: string
+          _id_front_url?: string
+          _id_number: string
+          _id_type: string
+          _phone: string
+          _selfie_url?: string
+          _user_id: string
+        }
+        Returns: undefined
+      }
     }
     Enums: {
       app_role: "customer" | "pundit" | "admin"
