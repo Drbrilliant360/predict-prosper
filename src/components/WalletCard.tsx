@@ -28,6 +28,12 @@ const WalletCard = () => {
   const [submitting, setSubmitting] = useState(false);
 
   const handleDeposit = async () => {
+    if (!user) {
+      toast.error("Please log in to continue.");
+      window.location.href = "/auth";
+      return;
+    }
+
     if (!phone || !amount) {
       toast.error("Please enter phone number and amount");
       return;
